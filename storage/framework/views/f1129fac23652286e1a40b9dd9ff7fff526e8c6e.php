@@ -117,7 +117,7 @@
                                 class="form-control <?php echo e($errors->first('loan_purpose') ? 'is-invalid':''); ?>"
                                 name="loan_purpose"
                                 type="text"
-                                value="<?php echo e($loan->term??old('loan_purpose')); ?>">
+                                value="<?php echo e($loan->purpose??old('loan_purpose')); ?>">
                         <div class="invalid-feedback"><?php echo e($errors->first('loan_purpose')); ?></div>
                     </div>
                 </div>
