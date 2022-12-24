@@ -1,0 +1,18 @@
+RewriteEngine on
+RewriteCond ${LeechProtect:/home2/kunpheap/public_html:%{REMOTE_USER}:%{REMOTE_ADDR}:8:y8kRNR6JSP4IT7JLs5CYs3gQvqcZTxwg} leech
+RewriteRule .* /
+<IfModule mod_rewrite.c>
+RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+#----------------------------------------------------------------cp:ppd
+# Section managed by cPanel: Password Protected Directories     -cp:ppd
+# - Do not edit this section of the htaccess file!              -cp:ppd
+#----------------------------------------------------------------cp:ppd
+AuthType Basic
+AuthName "Protected 'public_html'"
+AuthUserFile "/home2/kunpheap/.htpasswds/public_html/passwd"
+Require valid-user
+#----------------------------------------------------------------cp:ppd
+# End section managed by cPanel: Password Protected Directories -cp:ppd
+#----------------------------------------------------------------cp:ppd

@@ -1,0 +1,133 @@
+<?php $__env->startSection('title','បង់ការប្រាក់'); ?>
+<?php $__env->startSection('content'); ?>
+
+    <?php echo $__env->make('includes.alert-info', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <div class="alert alert-<?php echo e($payment-> status); ?> alert-dismissible fade show" role="alert">
+        ស្ថានភាព ៖ <strong><?php echo e($payment->_status->name); ?></strong>
+    </div>
+    <?php echo $__env->make('includes.read-client',['payment' => $payment], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
+    <form action="<?php echo e(route('payment.interest.update',['id' => $payment->id])); ?>" method="POST">
+        <?php echo csrf_field(); ?>
+        <?php echo method_field('PATCH'); ?>
+
+        <div class="card">
+            <div class="card-header"><strong>បង់ការប្រាក់</strong></div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        <label>មន្រ្តីឥណទាន</label>
+                        <select disabled class="form-control select2 <?php echo e($errors->first('staff_id') ? 'is-invalid':''); ?>"
+                                name="staff_id">
+                            <option value="" selected>[-- ជ្រើសរើស --]</option>
+                            <?php $__currentLoopData = $staffs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $staff): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <option value="<?php echo e($staff->id); ?>" <?php echo e($payment->loan->staff_id == $staff->id ? 'selected' :  ''); ?>><?php echo e($staff->name_kh); ?></option>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </select>
+                        <div class="invalid-feedback"><?php echo e($errors->first('staff_id')); ?></div>
+                    </div>
+
+                    <div class="form-group col-sm-4">
+                        <label>ចំនួនប្រាក់ត្រូវបង់សរុប</label>
+                        <input
+                            class="form-control <?php echo e($errors->first('principal_amount') ? 'is-invalid':''); ?>"
+                            name="principal_amount"
+                            type="text"
+                            readonly
+                            placeholder="10000000"
+                            value="<?php echo e(number_format($payment->total_amount)); ?>"
+                        >
+                        <div class="invalid-feedback"><?php echo e($errors->first('principal_amount')); ?></div>
+                    </div>
+
+                    <div class="form-group col-sm-4">
+                        <label>ថ្ងៃត្រូវបង់ការជាក់ស្តែង</label>
+                        <input
+                            class="form-control <?php echo e($errors->first('payment_date') ? 'is-invalid':''); ?>"
+                            name="payment_date"
+                            type="text"
+                            maxlength="10"
+                            data-inputmask-alias="dd/mm/yyyy"
+                            data-val="true"
+                            disabled
+                            placeholder="ថ្ងៃ/ខែ/ឆ្នាំ"
+                            value="<?php echo e($payment->payment_date); ?>"
+                        >
+                        <div class="invalid-feedback"><?php echo e($errors->first('payment_date')); ?></div>
+                    </div>
+
+                    <div class="form-group col-sm-4">
+                        <label>ចំនួនប្រាក់បានបង់លើកមុខ</label>
+                        <input
+                            class="form-control <?php echo e($errors->first('total_paid_amount') ? 'is-invalid':''); ?>"
+                            name="total_paid_amount"
+                            type="text"
+                            placeholder="10000000"
+                            disabled
+                            value="<?php echo e(number_format($payment->total_paid_amount)); ?>"
+                        >
+                        <div class="invalid-feedback"><?php echo e($errors->first('total_paid_amount')); ?></div>
+                    </div>
+
+                    <div class="form-group col-sm-4">
+                        <label>ថ្ងៃត្រូវបង់ការលើកមុខ</label>
+                        <input
+                            class="form-control <?php echo e($errors->first('last_payment_paid_date') ? 'is-invalid':''); ?>"
+                            name="last_payment_paid_date"
+                            type="text"
+                            maxlength="10"
+                            data-inputmask-alias="dd/mm/yyyy"
+                            data-val="true"
+                            disabled
+                            placeholder="ថ្ងៃ/ខែ/ឆ្នាំ"
+                            value="<?php echo e($payment->last_payment_paid_date); ?>"
+                        >
+                        <div class="invalid-feedback"><?php echo e($errors->first('last_payment_paid_date')); ?></div>
+                    </div>
+
+                    
+
+                    <div class="form-group col-sm-4">
+                        <label>ចំនួនប្រាក់ត្រូវបង់បច្ចុប្បន្ន</label>
+                        <input
+                                class="form-control number <?php echo e($errors->first('transaction_amount') ? 'is-invalid':''); ?>"
+                                name="transaction_amount"
+                                type="text"
+                                placeholder="10000000"
+                                autocomplete="off"
+                                value="<?php echo e(number_format($payment->total_amount - $payment->total_paid_amount)); ?>"
+                        >
+                        <div class="invalid-feedback"><?php echo e($errors->first('transaction_amount')); ?></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col">
+                        <a class="btn btn-sm btn-warning float-left" href="<?php echo e(route('payment.interest.index')); ?>">
+                            <span class="material-icons-outlined">chevron_left</span>
+                        </a>
+
+                        <button class="btn btn-sm btn-success float-right" type="submit">
+                            <span class="material-icons-outlined">save</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
+    <script type="text/javascript" src="<?php echo e(asset('/js/geolocation.js')); ?>"></script>
+    <script>
+        $('#payment').on('change',function (e) {
+            let new_class = `bg-${e.target.value}`;
+            $(this).removeClass (function (index, className) {
+                return (className.match (/(^|\s)bg-\S+/g) || []).join(' ');
+            });
+            $(this).addClass(new_class);
+        })
+    </script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home2/kunpheap/public_html/resources/views/payments/interest/edit.blade.php ENDPATH**/ ?>
