@@ -70,7 +70,8 @@
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </tbody>
             </table>
-            <div class="text-center"><?php echo e($loans->appends($_GET)->links()); ?></div>            
-        </div>        
+            <div class="text-center"><?php echo e($loans->appends($_GET)->links()); ?></div>
+        </div>
     </div>
-</div><?php /**PATH E:\Project\SDT\PFB CASH\Source Code\resources\views/loans/list.blade.php ENDPATH**/ ?>
+</div>
+<?php /**PATH E:\Project\SDT\PFB CASH\Source Code\resources\views/loans/list.blade.php ENDPATH**/ ?>

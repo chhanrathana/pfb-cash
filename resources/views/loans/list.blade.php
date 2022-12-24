@@ -70,7 +70,7 @@
                 @endforeach
                 </tbody>
             </table>
-            <div class="text-center">{{$loans->appends($_GET)->links()}}</div>            
-        </div>        
+            <div class="text-center">{{$loans->appends($_GET)->links()}}</div>
+        </div>
     </div>
 </div>

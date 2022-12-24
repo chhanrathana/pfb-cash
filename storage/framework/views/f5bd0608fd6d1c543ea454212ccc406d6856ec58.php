@@ -1,20 +1,19 @@
-@extends('layouts.app')
-@section('title', 'តារាង-កម្ចី')
+<?php $__env->startSection('title', 'តារាង-កម្ចី'); ?>
 
-@section('content')
-    @include('includes.read-client')
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('includes.read-client', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-    @include('includes.read-loan')
+    <?php echo $__env->make('includes.read-loan', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <div class="card">
         <div class="card-header">
             <div class="float-right">
-                  <a href="{{ route('loan.export',['id' => $loan->id])}}"
+                  <a href="<?php echo e(route('loan.export',['id' => $loan->id])); ?>"
                 class="btn btn-sm btn-info ">
                 <span class="material-icons-outlined">file_download</span>
             </a>
 
-            <a class="btn btn-sm btn-warning " target="_blank" href="{{ route('loan.download',['id' => $loan->id ])}}">
+            <a class="btn btn-sm btn-warning " target="_blank" href="<?php echo e(route('loan.download',['id' => $loan->id ])); ?>">
                 <span class="material-icons-outlined">print</span>
             </a>
             </div>
@@ -47,25 +46,25 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($loan->payments as $payment)
+                                <?php $__currentLoopData = $loan->payments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $payment): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <tr>
                                     <td class="text-center text-nowrap">
-                                        <a class="btn btn-sm btn-primary {{ $loan->status <> 'pending'?'disabled':'' }}" href="{{ route('loan.list.edit',['id' => $payment->id ])}}">
+                                        <a class="btn btn-sm btn-primary <?php echo e($loan->status <> 'pending'?'disabled':''); ?>" href="<?php echo e(route('loan.list.edit',['id' => $payment->id ])); ?>">
                                             <span class="material-icons-outlined">edit_calendar</span>
                                         </a>
                                     </td>
-                                    <td class="text-right text-nowrap">{{ $payment->sort }}</td>
-                                    <td class="text-center text-nowrap"><span class="{{ $payment->_status->css }}">{{ $payment->_status->name }}</span></td>
-                                    <td>{{ convertDaytoKhmer(date('D',strtotime($payment->getRawOriginal('payment_date')))).' '.$payment->payment_date }}</td>
-                                    <td class="text-right text-nowrap">{{ number_format($payment->deduct_amount) }}</td>
-                                    <td class="text-right text-nowrap">{{ number_format($payment->interest_amount) }}</td>
-                                    <td class="text-right text-nowrap">{{ number_format($payment->commission_amount) }}</td>
-                                    <td class="text-right text-nowrap">{{ number_format($payment->total_amount) }} </td>
-                                    <td class="text-right text-nowrap">{{ number_format($payment->pending_amount) }}</td>
-                                    <td class="text-right text-nowrap">{{ number_format($payment->penalty_amount) }}</td>
+                                    <td class="text-right text-nowrap"><?php echo e($payment->sort); ?></td>
+                                    <td class="text-center text-nowrap"><span class="<?php echo e($payment->_status->css); ?>"><?php echo e($payment->_status->name); ?></span></td>
+                                    <td><?php echo e(convertDaytoKhmer(date('D',strtotime($payment->getRawOriginal('payment_date')))).' '.$payment->payment_date); ?></td>
+                                    <td class="text-right text-nowrap"><?php echo e(number_format($payment->deduct_amount)); ?></td>
+                                    <td class="text-right text-nowrap"><?php echo e(number_format($payment->interest_amount)); ?></td>
+                                    <td class="text-right text-nowrap"><?php echo e(number_format($payment->commission_amount)); ?></td>
+                                    <td class="text-right text-nowrap"><?php echo e(number_format($payment->total_amount)); ?> </td>
+                                    <td class="text-right text-nowrap"><?php echo e(number_format($payment->pending_amount)); ?></td>
+                                    <td class="text-right text-nowrap"><?php echo e(number_format($payment->penalty_amount)); ?></td>
                                     <td class="text-right text-nowrap"></td>
                                 </tr>
-                                @endforeach
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </tbody>
                         </table>
                     </div>
@@ -85,17 +84,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($logs as $log)
+                                <?php $__currentLoopData = $logs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $log): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <tr>
-                                    <td class="text-right text-nowrap">{{ $loop->index + 1 }}</td>
-                                    <td class="text-right text-nowrap">{{ $log->payment->sort??'' }}</td>
-                                    <td class="text-left text-nowrap">{{ $log->payment->payment_date??'' }}</td>
-                                    <td class="text-right text-nowrap">{{ number_format($log->payment->total_amount) }} </td>
-                                    <td class="text-left text-nowrap">{{ $log->transaction_datetime }}</td>
-                                    <td class="text-right text-nowrap">{{ number_format($log->transaction_amount) }}</td>
-                                    <td class="text-left text-nowrap">{{ $log->type }}</td>
+                                    <td class="text-right text-nowrap"><?php echo e($loop->index + 1); ?></td>
+                                    <td class="text-right text-nowrap"><?php echo e($log->payment->sort??''); ?></td>
+                                    <td class="text-left text-nowrap"><?php echo e($log->payment->payment_date??''); ?></td>
+                                    <td class="text-right text-nowrap"><?php echo e(number_format($log->payment->total_amount)); ?> </td>
+                                    <td class="text-left text-nowrap"><?php echo e($log->transaction_datetime); ?></td>
+                                    <td class="text-right text-nowrap"><?php echo e(number_format($log->transaction_amount)); ?></td>
+                                    <td class="text-left text-nowrap"><?php echo e($log->type); ?></td>
                                 </tr>
-                                @endforeach
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </tbody>
                         </table>
                     </div>
@@ -103,4 +102,6 @@
               </div>
         </div>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\Project\SDT\PFB CASH\Source Code\resources\views/loans/show.blade.php ENDPATH**/ ?>
