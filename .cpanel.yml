@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/uat.dev.pfb.kmochcode.xyz/
+    - /bin/cp -R images $DEPLOYPATH
