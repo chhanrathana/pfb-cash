@@ -19,7 +19,7 @@
             </tr>
             <tr>
                 <td>កូដសាខា</td>
-                <td>{{$loan->branch->id??''}}</td>
+                <td>{{$loan->branch->code??''}}</td>
                 <td>ឈ្មោះសាខា</td>
                 <td> {{$loan->branch->name??''}}</td>
             </tr>
