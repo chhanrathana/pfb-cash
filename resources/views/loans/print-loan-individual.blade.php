@@ -3,58 +3,69 @@
     <h2 class="text-center heading-title-center">
          តារាងកាលវិភាគសងប្រាក់សងប្រាក់
     </h2>
+    
     <div class="row">
         <table style="width: 100%; font-size:10px" class="table-non-border td-border-non line-height-2">
             <tr>
-                <td>ឈ្មោះភ្នាក់ងារ</td>
-                <td colspan="3">{{$loan->client->code}}</td>
-                <td>លេខទូរស័ព្ទភ្នាក់ងារ</td>
+                <td>កូដអតិថិជន</td>
+                <td>{{$loan->client->code}}</td>
+                <td>ភ្នាក់ងារ</td>
                 <td> {{$loan->staff->name_kh??''}} </td>
             </tr>
             <tr>
-                <td>ឈ្មោះអតិថិជន</td>
+                <td>កូដសាខា</td>
                 <td>{{$loan->branch->code??''}}</td>
-                <td>អ្នករួមកម្ចី</td>
-                <td>..........</td>
-                <td>លេខទូរស័ព្ទ</td>
+                <td>ឈ្មោះសាខា</td>
                 <td> {{$loan->branch->name??''}}</td>
             </tr>
             <tr>
-                <td>លេខកូដកម្ចី</td>
-                <td>{{$loan->code}}</td>
-                <td>ប្រភេទសងប្រាក់</td>
+                <td>លេខកូដកិច្ចសន្យា</td>
                 <td>{{$loan->code}}</td>
 
-                <td>អាសយដ្ឋាន</td>
+                <td>លេខទំនាក់ទំនងភ្នាក់ងារ</td>
                 <td>{{$loan->staff->phone_number??''}} </td>
             </tr>
-        </table>
-        <hr>
-        <table style="width: 100%; font-size:10px" class="table-non-border td-border-non line-height-2">
             <tr>
-                <td >ចំនួនទឹកប្រាក់ខ្ចី</td>
+                <td >ឈ្មោះអតិថិជន</td>
                 <td>{{$loan->client->name_kh}}</td>
-                <td >ទឹកប្រាក់ជាអក្សរ</td>
-                <td>{{$loan->client->name_kh}}</td>
-                <td >សេវារដ្ឋបាល</td>
-                <td>{{$loan->client->name_kh}}</td>
+
+                <td>ប្រភេទកម្ចី</td>
+                <td>{{$loan->interest->name??''}} </td>
             </tr>
             <tr>
-                <td >រយះពេលខ្ចី</td>
-                <td>{{$loan->client->name_kh}}</td>
-                <td >កាលបរិច្ឆេទខ្ចី</td>
-                <td>{{$loan->client->name_kh}}</td>
-                <td >កាលបរិច្ឆេទសងលើកដំបូង</td>
-                <td>{{$loan->client->name_kh}}</td>
+                <td>អាស័យដ្ឋាន</td>
+                <td>{{$loan->client->address}}</td>
+
+                <td>ចំនួនកាលវិភាគ</td>
+                <td>{{count($loan->payments)}} </td>
+            </tr>
+            <tr>
+                <td>លេខទំនាក់ទំនង</td>
+                <td>{{$loan->client->phone_number}}</td>
+
+                <td>ចំនួនទឹកប្រាក់</td>
+                <td>{{ number_format($loan->principal_amount) }}</td>
+            </tr>
+            <tr>
+                <td>ជំហាន</td>
+                <td>{{$loan->client->loans->count()}}</td>
+                <td>រូបិយប័ណ្ណ</td>
+                <td>រៀល </td>
+            </tr>
+            <tr>
+                <td>ថ្ងៃសងដំបូង</td>
+                <td>{{$loan->started_payment_date}}</td>
+
+                <td>ថ្ងៃផុតកំណត់</td>
+                <td>{{$loan->last_payment_date}} </td>
             </tr>
         </table>
     </div>
-
+    
     <div class="text-right">
         <small class="print-date"><i>printed at {{ \Carbon\Carbon::now() }}</i></small>
     </div>
     <div class="report" id="report">
-
         <table class="th-color">
             <tr>
                 <th style="width: 10%; font-size: smaller; padding: 4px;">ល.រ</th>
@@ -62,7 +73,6 @@
                 <th style="width: 30%; font-size: smaller; padding: 4px;">ចំនួនទឹកប្រាក់សងមួយលើកៗ</th>
                 <th style="width: 220px; font-size: smaller; padding: 4px;">សម្គាល់ផ្សេងៗ</th>
             </tr>
-
             @foreach ($loan->payments as $payment)
                 <tr>
                     <td style="font-size: smaller; padding: 4px" class="text-center text-nowrap">{{ $loop->index + 1 }}</td>
