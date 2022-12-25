@@ -1,4 +1,4 @@
-/storage/framework/views/
+/storage/framework/views/*
 node_modules/
 npm-debug.log
 yarn-error.log
