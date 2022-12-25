@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header">
-        <strong>មន្ដ្រីឥណទាន-ចំណេញសេវារដ្ឋបាល</strong>            
+        <strong>ភ្នាក់ងារ-ចំណេញសេវារដ្ឋបាល</strong>            
     </div>
     <div class="card-body">
         <div class="table-responsive">

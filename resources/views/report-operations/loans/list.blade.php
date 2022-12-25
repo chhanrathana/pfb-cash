@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-header">
         <div class="row">
-            <div class="col"><strong>តារាង-មន្ដ្រីឥណទាន</strong></div>
+            <div class="col"><strong>តារាង-ភ្នាក់ងារ</strong></div>
             <div class="col">
                 <a
                 href="{{ route('report-operation.loan-export',$_GET)}}"

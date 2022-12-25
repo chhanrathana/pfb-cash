@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','មន្ដ្រីឥណទាន-ចំណេញសេវារដ្ឋបាល')
+@section('title','ភ្នាក់ងារ-ចំណេញសេវារដ្ឋបាល')
 @section('content')
 
     @include('report-staffs.revenue-admin-fees.search')

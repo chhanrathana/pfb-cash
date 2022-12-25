@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','មន្ដ្រីឥណទាន-ថ្មី')
+@section('title','ភ្នាក់ងារ-ថ្មី')
 
 @section('content')
     <form action="{{ route('master-data.staff.store') }}" method="post">

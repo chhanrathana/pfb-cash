@@ -1,5 +1,5 @@
 <div class="card">
-    <div class="card-header"><strong>មន្ដ្រីឥណទាន-ចំណេញ</strong></div>
+    <div class="card-header"><strong>ភ្នាក់ងារ-ចំណេញ</strong></div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered table-striped table-hover table-sm">
