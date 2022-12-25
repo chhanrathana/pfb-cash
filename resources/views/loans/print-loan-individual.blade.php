@@ -5,7 +5,7 @@
     </h2>
     
     <div class="row">
-        <table style="width: 100%; font-size:10px" class="table-non-border td-border-non line-height-2">
+        <table style="width: 100%; font-size:10px; margin-top:20px" class="table-non-border td-border-non line-height-2">
             <tr>
                 <td>កូដអតិថិជន</td>
                 <td>{{$loan->client->code}}</td>
