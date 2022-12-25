@@ -44,6 +44,8 @@ class LoanHalfMonthlyController extends Controller
             'clients' => $this->clientService->getClients($reqeust),
             'client' => $client,
             'loan' => $loan,
+            'first_guarantor' => null,
+            'second_guarantor' => null,
             'districts' => $districts,
             'communes' => $communes,
             'villages' => $villages,
