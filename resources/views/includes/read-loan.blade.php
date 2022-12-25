@@ -8,7 +8,7 @@
             </div>
 
             <div class="col-sm-6 col-md-6 form-group row">
-                <label class="col-sm-4 col-form-label">មន្រ្តីឥណទាន</label>
+                <label class="col-sm-4 col-form-label">ភ្នាក់ងារ</label>
                 <label class="col-sm-8 col-form-label font-weight-bold">{{ $loan->staff->name_kh }}</label>
             </div>
             <div class="col-sm-6 col-md-6 form-group row">

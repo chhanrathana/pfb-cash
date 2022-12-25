@@ -12,7 +12,7 @@
                         <th class="text-center text-nowrap">កូដអតិថិជន</th>
                         <th class="text-center text-nowrap">កូដកិច្ចសន្យា</th>
                         <th class="text-center text-nowrap">ឈ្មោះអតិថិជន</th>
-                        <th class="text-center text-nowrap">មន្រ្តីឥណទាន</th>
+                        <th class="text-center text-nowrap">ភ្នាក់ងារ</th>
                         <th class="text-center text-nowrap">ប្រភេទកម្ចី</th>
                         <th class="text-center text-nowrap">រយះពេល</th>
                         <th class="text-center text-nowrap">ចំនួនប្រាក់កម្ចី</th>

@@ -8,7 +8,7 @@
     
     <div class="report repay" id="report">
         <br/>
-        <h3 class="text-font-bold">មន្រ្តីឥណទាន ៖ <strong>{{ $defaultStaff->name_kh }}</strong></h3>
+        <h3 class="text-font-bold">ភ្នាក់ងារ ៖ <strong>{{ $defaultStaff->name_kh }}</strong></h3>
         <div class="text-right">
             <small class="print-date"><i>printed at {{ \Carbon\Carbon::now() }}</i></small>   
         </div>

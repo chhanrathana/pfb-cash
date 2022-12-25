@@ -160,7 +160,7 @@ return [
         'village_id' => 'ភូមិ',
         'principal_amount' => 'ចំនួនប្រាក់កម្ចី',
         'term' => 'រយះពេល',
-        'staff_id' => 'មន្រ្តីឥណទាន',
+        'staff_id' => 'ភ្នាក់ងារ',
         'total_paid_amount' => 'ប្រាក់បានបង់',
         'registration_date' => 'ថ្ងៃខ្ចី',
         'finish_payment_date' => 'ថ្ងៃផ្តាច់',

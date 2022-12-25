@@ -13,7 +13,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="form-group col-sm-4">
-                        <label>មន្រ្តីឥណទាន <span class="text-danger">*</span></label>
+                        <label>ភ្នាក់ងារ <span class="text-danger">*</span></label>
                         <select class="form-control select2 {{ $errors->first('staff_id') ? 'is-invalid':'' }}" name="staff_id">
                             <option value="" selected>[-- ជ្រើសរើស --]</option>
                             @foreach ($staffs as $staff)

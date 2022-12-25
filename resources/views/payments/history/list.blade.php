@@ -15,7 +15,7 @@
                     <th class="text-center text-nowrap">សាខា</th>
                     <th class="text-center text-nowrap">កូដអតិថិជន</th>
                     <th class="text-center text-nowrap">ឈ្មោះអតិថិជន</th>
-                    <th class="text-center text-nowrap">មន្រ្តីឥណទាន</th>
+                    <th class="text-center text-nowrap">ភ្នាក់ងារ</th>
                     <th class="text-center text-nowrap">ប្រភេទកម្ចី</th>
                     <th class="text-center text-nowrap">ថ្ងៃខ្ចី</th>
                     <th class="text-center text-nowrap">ថ្ងៃត្រូវបង់ផ្តាច់</th>

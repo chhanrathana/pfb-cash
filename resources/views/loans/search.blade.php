@@ -16,7 +16,7 @@
 
                 <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 mb-1">
                     <select class="form-control select2" name="staff_id" >
-                        <option value="" disabled selected>[-- មន្រ្តីឥណទាន	 --]</option>
+                        <option value="" disabled selected>[-- ភ្នាក់ងារ	 --]</option>
                         <option value="all" {{ request('staff_id') == 'all'?'selected':'' }}>ទាំងអស់</option>
                         @foreach ($staffs as $staff)
                             <option value="{{ $staff->id }}" {{ request('staff_id') == $staff->id?'selected':'' }}>{{ $staff->name_kh }}</option>

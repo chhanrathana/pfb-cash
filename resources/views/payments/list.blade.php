@@ -23,7 +23,7 @@
     <div class="card-body">
         
         @if(request('staff_id') && request('staff_id') != "all")
-        <h6 class="text-font-bold">មន្រ្តីឥណទាន <strong>{{ $defaultStaff->name_kh }}</strong></h6>
+        <h6 class="text-font-bold">ភ្នាក់ងារ <strong>{{ $defaultStaff->name_kh }}</strong></h6>
         @endif
         <div class="table-responsive">
 

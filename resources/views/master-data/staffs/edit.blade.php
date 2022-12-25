@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','កែប្រែ-មន្រ្តីឥណទាន')
+@section('title','កែប្រែ-ភ្នាក់ងារ')
 
 @section('content')
     <form action="{{ route('master-data.staff.update',['id' => $staff->id]) }}" method="POST">

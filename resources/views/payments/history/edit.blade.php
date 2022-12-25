@@ -18,7 +18,7 @@
             <div class="card-body">
                 <div class="row">
                      <div class="form-group col-sm-4">
-                        <label>មន្រ្តីឥណទាន</label>
+                        <label>ភ្នាក់ងារ</label>
                         <select disabled class="form-control select2 {{ $errors->first('staff_id') ? 'is-invalid':'' }}" name="staff_id">
                             <option value="" selected>[-- ជ្រើសរើស --]</option>
                             @foreach ($staffs as $staff)
