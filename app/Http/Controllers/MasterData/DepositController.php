@@ -5,9 +5,12 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Branch;
 use App\Models\Deposit;
+use App\Models\DocumentType;
+use App\Models\Sex;
 use App\Models\Shareholder;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use League\CommonMark\Block\Element\Document;
 
 class DepositController extends Controller
 {
@@ -36,7 +39,9 @@ class DepositController extends Controller
     {            
         return view('master-data.deposits.create',[
             'shareholders' => Shareholder::all(),
-            'branches' => Branch::all()
+            'branches' => Branch::all(),
+            'documents' => DocumentType::all(),
+            'sexes' => Sex::all(),
         ]);
     }
 
@@ -55,6 +60,15 @@ class DepositController extends Controller
             $shareholder = new Shareholder();
             $shareholder->name_kh  = $request->name_kh;
             $shareholder->name_en  = $request->name_en;
+            $shareholder->sex  = $request->sex;
+            $shareholder->date_of_birth  = $request->date_of_birth;
+            $shareholder->phone_number  = $request->phone_number;
+            $shareholder->start_work_date  = $request->start_work_date;
+            $shareholder->born_place  = $request->born_place;
+            $shareholder->document_type  = $request->document_type;
+            $shareholder->document_number  = $request->document_number;
+            $shareholder->emergency_number  = $request->emergency_number;
+            $shareholder->current_place  = $request->current_place;
             $shareholder->save();
 
              Deposit::create([
@@ -78,7 +92,9 @@ class DepositController extends Controller
         
         return view('master-data.deposits.edit', [
             'deposit' => $deposit,
-            'branches' => Branch::all()
+            'branches' => Branch::all(),
+            'documents' => DocumentType::all(),
+            'sexes' => Sex::all(),
         ]);
     }
 
@@ -105,6 +121,15 @@ class DepositController extends Controller
             $shareholder = Shareholder::find($request->shareholder_id);
             $shareholder->name_kh  = $request->name_kh;
             $shareholder->name_en  = $request->name_en;
+            $shareholder->sex  = $request->sex;
+            $shareholder->date_of_birth  = $request->date_of_birth;
+            $shareholder->phone_number  = $request->phone_number;
+            $shareholder->start_work_date  = $request->start_work_date;
+            $shareholder->born_place  = $request->born_place;
+            $shareholder->document_type  = $request->document_type;
+            $shareholder->document_number  = $request->document_number;
+            $shareholder->emergency_number  = $request->emergency_number;
+            $shareholder->current_place  = $request->current_place;
             $shareholder->save();
 
             DB::commit();

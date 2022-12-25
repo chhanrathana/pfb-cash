@@ -24,7 +24,6 @@ class CreateStaffsTable extends Migration
             $table->string('document_type')->nullable();
             $table->foreign('document_type')->references('id')->on('document_type');
             $table->string('document_number',50)->nullable();
-
             $table->string('emergency_number',50)->nullable();
             $table->string('current_place')->nullable();
             $table->timestamps();
