@@ -1,8 +1,7 @@
-@extends('layouts.pdf-layout')
 @select('Models.Branch')
 
 
-@section('html')
+<?php $__env->startSection('html'); ?>
     <div class="text-center heading-title-center khmer-moul">
          កាលវិភាគសងប្រាក់
     </div>
@@ -13,62 +12,62 @@
         <table style="width: 100%; font-size:10px" class="table-non-border td-border-non line-height-2">
             <tr>
                 <td>កូដអតិថិជន</td>
-                <td>{{$loan->client->code}}</td>
+                <td><?php echo e($loan->client->code); ?></td>
                 <td>ភ្នាក់ងារ</td>
-                <td> {{$loan->staff->name_kh??''}} </td>
+                <td> <?php echo e($loan->staff->name_kh??''); ?> </td>
             </tr>
             <tr>
                 <td>កូដសាខា</td>
-                <td>{{$loan->branch->code??''}}</td>
+                <td><?php echo e($loan->branch->code??''); ?></td>
                 <td>ឈ្មោះសាខា</td>
-                <td> {{$loan->branch->name??''}}</td>
+                <td> <?php echo e($loan->branch->name??''); ?></td>
             </tr>
             <tr>
                 <td>លេខកូដកិច្ចសន្យា</td>
-                <td>{{$loan->code}}</td>
+                <td><?php echo e($loan->code); ?></td>
 
                 <td>លេខទំនាក់ទំនងភ្នាក់ងារ</td>
-                <td>{{$loan->staff->phone_number??''}} </td>
+                <td><?php echo e($loan->staff->phone_number??''); ?> </td>
             </tr>
             <tr>
                 <td >ឈ្មោះអតិថិជន</td>
-                <td>{{$loan->client->name_kh}}</td>
+                <td><?php echo e($loan->client->name_kh); ?></td>
 
                 <td>ប្រភេទកម្ចី</td>
-                <td>{{$loan->interest->name??''}} </td>
+                <td><?php echo e($loan->interest->name??''); ?> </td>
             </tr>
             <tr>
                 <td>អាស័យដ្ឋាន</td>
-                <td>{{$loan->client->address}}</td>
+                <td><?php echo e($loan->client->address); ?></td>
 
                 <td>ចំនួនកាលវិភាគ</td>
-                <td>{{count($loan->payments)}} </td>
+                <td><?php echo e(count($loan->payments)); ?> </td>
             </tr>
             <tr>
                 <td>លេខទំនាក់ទំនង</td>
-                <td>{{$loan->client->phone_number}}</td>
+                <td><?php echo e($loan->client->phone_number); ?></td>
 
                 <td>ចំនួនទឹកប្រាក់</td>
-                <td>{{ number_format($loan->principal_amount) }}</td>
+                <td><?php echo e(number_format($loan->principal_amount)); ?></td>
             </tr>
             <tr>
                 <td>ជំហាន</td>
-                <td>{{$loan->client->loans->count()}}</td>
+                <td><?php echo e($loan->client->loans->count()); ?></td>
                 <td>រូបិយប័ណ្ណ</td>
                 <td>រៀល </td>
             </tr>
             <tr>
                 <td>ថ្ងៃសងដំបូង</td>
-                <td>{{$loan->started_payment_date}}</td>
+                <td><?php echo e($loan->started_payment_date); ?></td>
 
                 <td>ថ្ងៃផុតកំណត់</td>
-                <td>{{$loan->last_payment_date}} </td>
+                <td><?php echo e($loan->last_payment_date); ?> </td>
             </tr>
         </table>
     </div>
 
     <div class="text-right">
-        <small class="print-date"><i>printed at {{ \Carbon\Carbon::now() }}</i></small>
+        <small class="print-date"><i>printed at <?php echo e(\Carbon\Carbon::now()); ?></i></small>
     </div>
     <div class="report" id="report">
 
@@ -85,20 +84,20 @@
                 <th style="width: 60px;">ផ្សេងៗ</th>
             </tr>
 
-            @foreach ($loan->payments as $payment)
+            <?php $__currentLoopData = $loan->payments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $payment): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr>
-                    <td class="text-right text-nowrap">{{ $loop->index + 1 }}</td>
-                    <td class="text-center" >{{ $payment->payment_date??''}} </td>
-                    <td class="text-center" nowrap="nowrap">{{ convertDaytoKhmer(date('D',strtotime($payment->getRawOriginal('payment_date')))) }}</td>
-                    <td class="text-right text-nowrap">{{ number_format($payment->deduct_amount) }}</td>
-                    <td class="text-right" >{{ number_format($payment->interest_amount) }} </td>
-                    <td class="text-right text-nowrap">{{ number_format($payment->commission_amount) }} </td>
-                    <td class="text-right text-nowrap">{{ number_format($payment->total_amount) }} </td>
-                    <td class="text-right text-nowrap">{{ number_format($payment->pending_amount) }} </td>
-                    <td class="text-right text-nowrap">{{ number_format($payment->penalty_amount) }}</td>
+                    <td class="text-right text-nowrap"><?php echo e($loop->index + 1); ?></td>
+                    <td class="text-center" ><?php echo e($payment->payment_date??''); ?> </td>
+                    <td class="text-center" nowrap="nowrap"><?php echo e(convertDaytoKhmer(date('D',strtotime($payment->getRawOriginal('payment_date'))))); ?></td>
+                    <td class="text-right text-nowrap"><?php echo e(number_format($payment->deduct_amount)); ?></td>
+                    <td class="text-right" ><?php echo e(number_format($payment->interest_amount)); ?> </td>
+                    <td class="text-right text-nowrap"><?php echo e(number_format($payment->commission_amount)); ?> </td>
+                    <td class="text-right text-nowrap"><?php echo e(number_format($payment->total_amount)); ?> </td>
+                    <td class="text-right text-nowrap"><?php echo e(number_format($payment->pending_amount)); ?> </td>
+                    <td class="text-right text-nowrap"><?php echo e(number_format($payment->penalty_amount)); ?></td>
                     <td class="text-right text-nowrap"></td>
                 </tr>
-            @endforeach
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </table>
 
     </div>
@@ -110,7 +109,7 @@
                 <div class="text-center">
                     <br>
                     <div class="text-left">
-                        <p class="p">ថ្ងៃ............. ខែ............. ឆ្នាំ {{ \Carbon\Carbon::now()->format('Y') }}</p>
+                        <p class="p">ថ្ងៃ............. ខែ............. ឆ្នាំ <?php echo e(\Carbon\Carbon::now()->format('Y')); ?></p>
                     </div>
                     <div class="khmer-moul" style="pandding-left:20px;">ហត្ថលេខា និងត្រាភាគីអោយខ្ចី </div>
                     <br>
@@ -133,7 +132,7 @@
                     <div class="text-right">
                     <br>
                         <div class="text-left">
-                            <p class="p">ថ្ងៃ............. ខែ............. ឆ្នាំ {{ \Carbon\Carbon::now()->format('Y') }}</p>
+                            <p class="p">ថ្ងៃ............. ខែ............. ឆ្នាំ <?php echo e(\Carbon\Carbon::now()->format('Y')); ?></p>
                         </div>
                         <div class="khmer-moul" style="pandding-left:20px;">ស្នាមមេដៃ ស្តាំកូនបំណុល</div>
                         <br>
@@ -148,4 +147,6 @@
             </th>
         </tr>
     </table>
-@stop
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.pdf-layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\Project\SDT\PFB CASH\Source Code\resources\views/loans/print-loan.blade.php ENDPATH**/ ?>
