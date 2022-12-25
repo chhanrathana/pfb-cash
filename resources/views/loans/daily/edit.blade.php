@@ -2,8 +2,6 @@
 @section('title', 'កែប្រែ-ប្រាក់កម្ចី')
 
 @section('content')
-    @include('includes.alert-info')
-
     <form action="{{ route('loan.daily.update',['id' => $loan->id ]) }}" method="POST">
         @csrf
         @method('PATCH')

@@ -2,31 +2,30 @@
     <div class="card-header bg-custom"><strong>ជ្រើសរើសប្រភេទកម្ចី <span class="text-danger">*</span></strong></div>
     <div class="card-body">
         <div class="row mb-4">
-            <div class="col-sm-12">
-                <label for="">ប្រភេទកម្ចី <span class="text-danger">*</span></label>
-                <div class="ml-4">
-                    <div class="form-check">
-                        <input onclick="location.href=`/loan/daily/create?type=individual`" class="form-check-input" type="radio" name="loan_type" id="loan_individual"
-                               value="individual" {{ request('type') == 'individual' ? 'checked' : '' }}>
-                        <label class="form-check-label {{ request('type') == 'individual' ? 'text-primary' : '' }}" for="loan_individual">
-                            កម្ចីបុគ្គល
-                        </label>
-                    </div>
+            <div class="col-sm-12 d-inline">
+                @foreach($loanTypes as $type)
                     <div class="form-check mt-3">
-                        <input onclick="location.href=`/loan/daily/create?type=group`" class="form-check-input" type="radio" name="loan_type" id="loan_group"
-                               value="group" {{ request('type') == 'group' ? 'checked' : '' }}>
-                        <label class="form-check-label {{ request('type') == 'group' ? 'text-primary' : '' }}" for="loan_group">
-                            កម្ចីជាក្រុម
+                        @if($loan)
+                            <input onclick="location.href=`/loan/daily/create?type={{$type->id}}`" class="form-check-input" type="radio" name="loan_type" id="{{ $type -> id }}"
+                                   value="{{ $type -> id }}" {{ $loan -> loan_type_id == $type -> id ? 'checked' : '' }}>
+                        @else
+                            <input onclick="location.href=`/loan/daily/create?type={{$type->id}}`" class="form-check-input" type="radio" name="loan_type" id="{{ $type -> id }}"
+                                   value="{{ $type -> id }}" {{ $loan -> loan_type_id == $type -> id ? 'checked' : '' }}>
+                        @endif
+                        <label class="form-check-label cursor-pointer {{ request('type') == $type -> id ? 'text-primary' : '' }}"
+                               for="{{ $type -> id }}">
+                            {{ $type -> name_kh }} / {{ $type -> name_en }}
                         </label>
                     </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
 </div>
 {{--loaner--}}
 <div class="card">
-    <div class="card-header bg-custom"><strong>ព័ត៌មានអ្នកខ្ចីប្រាក់ {{ request('type') == 'group' ? '(មេក្រុម)' : '' }}</strong></div>
+    <div class="card-header bg-custom"><strong>ព័ត៌មានអ្នកខ្ចីប្រាក់ {{ request('type') == 'group' ? '(មេក្រុម)' : '' }}
+            <span class="text-danger">*</span></strong></div>
     <div class="card-body">
         <div class="row">
             <input type="hidden" value="{{ $client->id??'' }}" name="client_id">
@@ -184,59 +183,83 @@
         </div>
     </div>
 </div>
-{{-- loan member --}}
-<div class="card">
-    <div class="card-header bg-custom"><strong>ព័ត៌មានសមាជិកខ្ចីប្រាក់</strong></div>
-    <div class="card-body">
-        <div class="row">
-            <input type="hidden" value="{{ $client->id??'' }}" name="client_id">
-            <div class="form-group col-sm-4">
-                <label>ឈ្មោះពេញ <span class="text-danger">*</span></label>
-                <input
-                        class="form-control {{ $errors->first('loaner_name_kh') ? 'is-invalid':'' }}"
-                        name="loaner_name_kh"
-                        type="text"
-                        placeholder="យិនប៊ុនណា"
-                        value="{{ $client->name_kh??old('loaner_name_kh') }}"
-                        maxlength="50">
-                <div class="invalid-feedback">{{ $errors->first('loaner_name_kh') }}</div>
-            </div>
-            <div class="form-group col-sm-4">
-                <label>ភេទ <span class="text-danger">*</span></label>
-                <select class="form-control select2  {{ $errors->first('loaner_sex') ? 'is-invalid':'' }}"
-                        name="loaner_sex" id="sex">
-                    <option value="" selected>[-- ជ្រើសរើស --]</option>
-                    @foreach ($sexes as $sex)
-                        @if ($client)
-                            <option value="{{ $sex->id }}" {{ $client->sex == $sex->id ? 'selected' :  '' }} >{{ $sex->name }}</option>
-                        @else
-                            <option value="{{ $sex->id }}" {{  old('sex') == $sex->id ? 'selected' :  '' }} >{{ $sex->name }}</option>
-                        @endif
-                    @endforeach
-                </select>
-                <div class="invalid-feedback">{{ $errors->first('loaner_sex') }}</div>
-            </div>
-
-            <div class="form-group col-sm-4">
-                <label for="phone_number">លេខទំនាក់ទំនង <span class="text-danger">*</span></label>
-                <input
-                    class="form-control {{ $errors->first('loaner_phone_number') ? 'is-invalid':'' }}"
-                    name="loaner_phone_number"
-                    type="text"
-                    placeholder="0817623XX"
-                    value="{{ $client->phone_number??old('loaner_phone_number') }}"
-                    maxlength="50">
-                <div class="invalid-feedback">{{ $errors->first('loaner_phone_number') }}</div>
-            </div>
+@if(request('type') == 'group' || ($loan -> loan_type_id == 'group'))
+    {{-- loan member --}}
+    <div class="card">
+        <div class="card-header bg-custom"><strong>ព័ត៌មានសមាជិកខ្ចីប្រាក់ <span class="text-danger">*</span></strong>
+        </div>
+        <div class="card-body">
+            @if($loan -> members )
+                @foreach( $loan -> members as $key => $member)
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label>សមាជិកទី {{$key + 1}} -ឈ្មោះជាភាសាខ្មែរ @if($key==0)
+                                    <span class="text-danger">*</span>
+                                @endif</label>
+                            <input
+                                    class="form-control {{ $errors->first('member_name_kh') ? 'is-invalid':'' }}"
+                                    name="member_name_kh[]"
+                                    type="text"
+                                    placeholder=""
+                                    value="{{ $member->name_kh??old('member_name_kh') }}"
+                                    maxlength="50">
+                            <div class="invalid-feedback">{{ $errors->first('member_name_kh') }}</div>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label>សមាជិកទី {{$key + 1}} -ឈ្មោះជាឡាតាំង @if($key==0)
+                                    <span class="text-danger">*</span>
+                                @endif</label>
+                            <input
+                                    class="form-control {{ $errors->first('member_name_en') ? 'is-invalid':'' }}"
+                                    name="member_name_en[]"
+                                    type="text"
+                                    placeholder=""
+                                    value="{{ $member->name_en??old('member_name_en') }}"
+                                    maxlength="50">
+                            <div class="invalid-feedback">{{ $errors->first('member_name_en') }}</div>
+                        </div>
+                    </div>
+                @endforeach
+            @else
+                @for($i=1; $i<5; $i++)
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label>សមាជិកទី {{$i}} -ឈ្មោះជាភាសាខ្មែរ @if($i==1)
+                                    <span class="text-danger">*</span>
+                                @endif</label>
+                            <input
+                                    class="form-control {{ $errors->first('member_name_kh') ? 'is-invalid':'' }}"
+                                    name="member_name_kh[]"
+                                    type="text"
+                                    placeholder=""
+                                    value="{{ $client->name_kh??old('member_name_kh') }}"
+                                    maxlength="50">
+                            <div class="invalid-feedback">{{ $errors->first('member_name_kh') }}</div>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label>សមាជិកទី {{$i}} -ឈ្មោះជាឡាតាំង @if($i==1)
+                                    <span class="text-danger">*</span>
+                                @endif</label>
+                            <input
+                                    class="form-control {{ $errors->first('member_name_en') ? 'is-invalid':'' }}"
+                                    name="member_name_en[]"
+                                    type="text"
+                                    placeholder=""
+                                    value="{{ $client->name_kh??old('member_name_en') }}"
+                                    maxlength="50">
+                            <div class="invalid-feedback">{{ $errors->first('member_name_en') }}</div>
+                        </div>
+                    </div>
+                @endfor
+            @endif
         </div>
     </div>
-</div>
+@endif
 {{--first guarantor--}}
 <div class="card">
-    <div class="card-header bg-custom"><strong>ព័ត៌មានអ្នកធានា (អាចអត់បញ្ជូលបាន)</strong></div>
+    <div class="card-header bg-custom"><strong>ព័ត៌មានអ្នកធានា</strong></div>
     <div class="card-body">
         <div class="row">
-            <input type="hidden" value="{{ $client->id??'' }}" name="client_id">
             <div class="form-group col-sm-4">
                 <label>ឈ្មោះអ្នកធានាទី១</label>
                 <input

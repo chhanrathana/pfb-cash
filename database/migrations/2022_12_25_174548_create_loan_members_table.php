@@ -14,20 +14,11 @@ class CreateLoanMembersTable extends Migration
     public function up()
     {
         Schema::create('loan_members', function (Blueprint $table) {
-            $table->uuid('id')->primary();      
-            $table->string('member_01_kh', 255);      
-            $table->string('member_01_en', 255);
-            $table->string('member_02_kh', 255);      
-            $table->string('member_02_en', 255);
-            $table->string('member_03_kh', 255);      
-            $table->string('member_03_en', 255);
-            $table->string('member_04_kh', 255);      
-            $table->string('member_04_en', 255);            
-            $table->timestamps();
-            $table->softDeletes();
-
             $table->uuid('loan_id')->nullable();
             $table->foreign('loan_id')->references('id')->on('loans');
+            $table->uuid('member_id')->nullable();
+            $table->foreign('member_id')->references('id')->on('members');
+            $table->string('remarks')->nullable();
         });
     }
 

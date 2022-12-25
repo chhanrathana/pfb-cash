@@ -2,31 +2,32 @@
     <div class="card-header bg-custom"><strong>ជ្រើសរើសប្រភេទកម្ចី <span class="text-danger">*</span></strong></div>
     <div class="card-body">
         <div class="row mb-4">
-            <div class="col-sm-12">
-                <label for="">ប្រភេទកម្ចី <span class="text-danger">*</span></label>
-                <div class="ml-4">
-                    <div class="form-check">
-                        <input onclick="location.href=`/loan/daily/create?type=individual`" class="form-check-input" type="radio" name="loan_type" id="loan_individual"
-                               value="individual" <?php echo e(request('type') == 'individual' ? 'checked' : ''); ?>>
-                        <label class="form-check-label <?php echo e(request('type') == 'individual' ? 'text-primary' : ''); ?>" for="loan_individual">
-                            កម្ចីបុគ្គល
-                        </label>
-                    </div>
+            <div class="col-sm-12 d-inline">
+                <?php $__currentLoopData = $loanTypes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $type): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="form-check mt-3">
-                        <input onclick="location.href=`/loan/daily/create?type=group`" class="form-check-input" type="radio" name="loan_type" id="loan_group"
-                               value="group" <?php echo e(request('type') == 'group' ? 'checked' : ''); ?>>
-                        <label class="form-check-label <?php echo e(request('type') == 'group' ? 'text-primary' : ''); ?>" for="loan_group">
-                            កម្ចីជាក្រុម
+                        <?php if($loan): ?>
+                            <input onclick="location.href=`/loan/daily/create?type=<?php echo e($type->id); ?>`" class="form-check-input" type="radio" name="loan_type" id="<?php echo e($type -> id); ?>"
+                                   value="<?php echo e($type -> id); ?>" <?php echo e($loan -> loan_type_id == $type -> id ? 'checked' : ''); ?>>
+                        <?php else: ?>
+                            <input onclick="location.href=`/loan/daily/create?type=<?php echo e($type->id); ?>`" class="form-check-input" type="radio" name="loan_type" id="<?php echo e($type -> id); ?>"
+                                   value="<?php echo e($type -> id); ?>" <?php echo e($loan -> loan_type_id == $type -> id ? 'checked' : ''); ?>>
+                        <?php endif; ?>
+                        <label class="form-check-label cursor-pointer <?php echo e(request('type') == $type -> id ? 'text-primary' : ''); ?>"
+                               for="<?php echo e($type -> id); ?>">
+                            <?php echo e($type -> name_kh); ?> / <?php echo e($type -> name_en); ?>
+
                         </label>
                     </div>
-                </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
         </div>
     </div>
 </div>
 
 <div class="card">
-    <div class="card-header bg-custom"><strong>ព័ត៌មានអ្នកខ្ចីប្រាក់ <?php echo e(request('type') == 'group' ? '(មេក្រុម)' : ''); ?></strong></div>
+    <div class="card-header bg-custom"><strong>ព័ត៌មានអ្នកខ្ចីប្រាក់ <?php echo e(request('type') == 'group' ? '(មេក្រុម)' : ''); ?>
+
+            <span class="text-danger">*</span></strong></div>
     <div class="card-body">
         <div class="row">
             <input type="hidden" value="<?php echo e($client->id??''); ?>" name="client_id">
@@ -184,59 +185,83 @@
         </div>
     </div>
 </div>
-
-<div class="card">
-    <div class="card-header bg-custom"><strong>ព័ត៌មានសមាជិកខ្ចីប្រាក់</strong></div>
-    <div class="card-body">
-        <div class="row">
-            <input type="hidden" value="<?php echo e($client->id??''); ?>" name="client_id">
-            <div class="form-group col-sm-4">
-                <label>ឈ្មោះពេញ <span class="text-danger">*</span></label>
-                <input
-                        class="form-control <?php echo e($errors->first('loaner_name_kh') ? 'is-invalid':''); ?>"
-                        name="loaner_name_kh"
-                        type="text"
-                        placeholder="យិនប៊ុនណា"
-                        value="<?php echo e($client->name_kh??old('loaner_name_kh')); ?>"
-                        maxlength="50">
-                <div class="invalid-feedback"><?php echo e($errors->first('loaner_name_kh')); ?></div>
-            </div>
-            <div class="form-group col-sm-4">
-                <label>ភេទ <span class="text-danger">*</span></label>
-                <select class="form-control select2  <?php echo e($errors->first('loaner_sex') ? 'is-invalid':''); ?>"
-                        name="loaner_sex" id="sex">
-                    <option value="" selected>[-- ជ្រើសរើស --]</option>
-                    <?php $__currentLoopData = $sexes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $sex): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <?php if($client): ?>
-                            <option value="<?php echo e($sex->id); ?>" <?php echo e($client->sex == $sex->id ? 'selected' :  ''); ?> ><?php echo e($sex->name); ?></option>
-                        <?php else: ?>
-                            <option value="<?php echo e($sex->id); ?>" <?php echo e(old('sex') == $sex->id ? 'selected' :  ''); ?> ><?php echo e($sex->name); ?></option>
-                        <?php endif; ?>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                </select>
-                <div class="invalid-feedback"><?php echo e($errors->first('loaner_sex')); ?></div>
-            </div>
-
-            <div class="form-group col-sm-4">
-                <label for="phone_number">លេខទំនាក់ទំនង <span class="text-danger">*</span></label>
-                <input
-                    class="form-control <?php echo e($errors->first('loaner_phone_number') ? 'is-invalid':''); ?>"
-                    name="loaner_phone_number"
-                    type="text"
-                    placeholder="0817623XX"
-                    value="<?php echo e($client->phone_number??old('loaner_phone_number')); ?>"
-                    maxlength="50">
-                <div class="invalid-feedback"><?php echo e($errors->first('loaner_phone_number')); ?></div>
-            </div>
+<?php if(request('type') == 'group' || ($loan -> loan_type_id == 'group')): ?>
+    
+    <div class="card">
+        <div class="card-header bg-custom"><strong>ព័ត៌មានសមាជិកខ្ចីប្រាក់ <span class="text-danger">*</span></strong>
+        </div>
+        <div class="card-body">
+            <?php if($loan -> members ): ?>
+                <?php $__currentLoopData = $loan -> members; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $member): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label>សមាជិកទី <?php echo e($key + 1); ?> -ឈ្មោះជាភាសាខ្មែរ <?php if($key==0): ?>
+                                    <span class="text-danger">*</span>
+                                <?php endif; ?></label>
+                            <input
+                                    class="form-control <?php echo e($errors->first('member_name_kh') ? 'is-invalid':''); ?>"
+                                    name="member_name_kh[]"
+                                    type="text"
+                                    placeholder=""
+                                    value="<?php echo e($member->name_kh??old('member_name_kh')); ?>"
+                                    maxlength="50">
+                            <div class="invalid-feedback"><?php echo e($errors->first('member_name_kh')); ?></div>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label>សមាជិកទី <?php echo e($key + 1); ?> -ឈ្មោះជាឡាតាំង <?php if($key==0): ?>
+                                    <span class="text-danger">*</span>
+                                <?php endif; ?></label>
+                            <input
+                                    class="form-control <?php echo e($errors->first('member_name_en') ? 'is-invalid':''); ?>"
+                                    name="member_name_en[]"
+                                    type="text"
+                                    placeholder=""
+                                    value="<?php echo e($member->name_en??old('member_name_en')); ?>"
+                                    maxlength="50">
+                            <div class="invalid-feedback"><?php echo e($errors->first('member_name_en')); ?></div>
+                        </div>
+                    </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            <?php else: ?>
+                <?php for($i=1; $i<5; $i++): ?>
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label>សមាជិកទី <?php echo e($i); ?> -ឈ្មោះជាភាសាខ្មែរ <?php if($i==1): ?>
+                                    <span class="text-danger">*</span>
+                                <?php endif; ?></label>
+                            <input
+                                    class="form-control <?php echo e($errors->first('member_name_kh') ? 'is-invalid':''); ?>"
+                                    name="member_name_kh[]"
+                                    type="text"
+                                    placeholder=""
+                                    value="<?php echo e($client->name_kh??old('member_name_kh')); ?>"
+                                    maxlength="50">
+                            <div class="invalid-feedback"><?php echo e($errors->first('member_name_kh')); ?></div>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label>សមាជិកទី <?php echo e($i); ?> -ឈ្មោះជាឡាតាំង <?php if($i==1): ?>
+                                    <span class="text-danger">*</span>
+                                <?php endif; ?></label>
+                            <input
+                                    class="form-control <?php echo e($errors->first('member_name_en') ? 'is-invalid':''); ?>"
+                                    name="member_name_en[]"
+                                    type="text"
+                                    placeholder=""
+                                    value="<?php echo e($client->name_kh??old('member_name_en')); ?>"
+                                    maxlength="50">
+                            <div class="invalid-feedback"><?php echo e($errors->first('member_name_en')); ?></div>
+                        </div>
+                    </div>
+                <?php endfor; ?>
+            <?php endif; ?>
         </div>
     </div>
-</div>
+<?php endif; ?>
 
 <div class="card">
-    <div class="card-header bg-custom"><strong>ព័ត៌មានអ្នកធានា (អាចអត់បញ្ជូលបាន)</strong></div>
+    <div class="card-header bg-custom"><strong>ព័ត៌មានអ្នកធានា</strong></div>
     <div class="card-body">
         <div class="row">
-            <input type="hidden" value="<?php echo e($client->id??''); ?>" name="client_id">
             <div class="form-group col-sm-4">
                 <label>ឈ្មោះអ្នកធានាទី១</label>
                 <input

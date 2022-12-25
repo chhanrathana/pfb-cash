@@ -112,11 +112,6 @@ class Loan extends BaseModel
         return $this->hasMany(Payment::class)->orderBy('sort');
     }
 
-    public function members()
-    {
-        return $this->hasMany(LoanMember::class);
-    }
-
     public function has_paid_payments(){
         return $this->hasMany(Payment::class)->whereNotNull('last_payment_paid_date')->orderBy('sort');
     }
@@ -143,6 +138,10 @@ class Loan extends BaseModel
 
     public function guarantors(){
         return $this->belongsToMany(Guarantor::class, 'loan_guarantor','loan_id','guarantor_id');
+    }
+
+    public function members(){
+        return $this -> belongsToMany(Member::class,'loan_members','loan_id','member_id');
     }
 
     public function firstGuarantor(){
