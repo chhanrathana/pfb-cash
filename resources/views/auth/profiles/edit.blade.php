@@ -65,7 +65,7 @@
 
         <div class="card-footer">
             <button class="btn btn-sm btn-success float-right" type="submit">
-                <svg class="c-icon"><use xlink:href="/icons/svg/free.svg#cil-save"></use></svg>
+                <span class="material-icons-outlined">save</span>
             </button>
         </div>
 </form>
