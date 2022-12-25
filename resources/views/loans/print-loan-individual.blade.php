@@ -63,7 +63,7 @@
     </div>
     
     <div class="text-right">
-        <small class="print-date"><i>printed at{{ \Carbon\Carbon::now() }}</i></small>
+        <small class="print-date"><i>printed at {{ \Carbon\Carbon::now() }}</i></small>
     </div>
     
 
