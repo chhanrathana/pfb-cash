@@ -208,3 +208,16 @@
         </div>  
     </form>
 @endsection
+@section('script')
+    @include('includes.alert-info-script')
+    <script>
+        $('#document_type').on('change',function(e) {
+            let text = $("#document_type option:selected").text();
+            // change title
+            $('#document_number_title').html(`លេខ${text} <span class="text-danger">*</span>`);
+            // enable input
+            $('#input_document_number').prop("disabled",false);
+            $('#input_document_number').prop("placeholder",`បញ្ចូលលេខ${text}`);
+        })
+    </script>
+@endsection
