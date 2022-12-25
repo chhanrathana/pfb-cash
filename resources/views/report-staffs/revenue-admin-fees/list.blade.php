@@ -9,7 +9,7 @@
                     <tr>
                         <th class="text-center text-nowrap">ល.រ</th>
                         <th class="text-center text-nowrap">សាខា</th>
-                        <th class="text-center text-nowrap">មន្ត្រីឥណទាន</th>
+                        <th class="text-center text-nowrap">ភ្នាក់ងារ</th>
                         <th class="text-center text-nowrap">ប្រតិបត្តិការ</th>
                         <th class="text-center text-nowrap">ប្រាក់ដើម</th>
                         <th class="text-center text-nowrap">សេវារដ្ឋបាល</th>                        

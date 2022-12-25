@@ -7,7 +7,7 @@
                 <tr>
                     <th class="text-center text-nowrap">ល.រ</th>
                     <th class="text-center text-nowrap">សាខា</th>
-                    <th class="text-center text-nowrap">មន្ត្រីឥណទាន</th>
+                    <th class="text-center text-nowrap">ភ្នាក់ងារ</th>
                     {{-- <th class="text-center text-nowrap">ប្រាក់ដើមសរុប</th> --}}
                     <th class="text-center text-nowrap">ប្រាក់ការសរុប</th>
                 </tr>
