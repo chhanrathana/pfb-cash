@@ -1,6 +1,5 @@
-{{--loaner--}}
 <div class="card">
-    <div class="card-header bg-custom"><strong>ព័ត៌មានអ្នកខ្ចីប្រាក់ {{ request('type') == 'group' ? '(មេក្រុម)' : '' }}</strong></div>
+    <div class="card-header bg-custom"><strong>ជ្រើសរើសប្រភេទកម្ចី <span class="text-danger">*</span></strong></div>
     <div class="card-body">
         <div class="row mb-4">
             <div class="col-sm-12">
@@ -23,6 +22,12 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+{{--loaner--}}
+<div class="card">
+    <div class="card-header bg-custom"><strong>ព័ត៌មានអ្នកខ្ចីប្រាក់ {{ request('type') == 'group' ? '(មេក្រុម)' : '' }}</strong></div>
+    <div class="card-body">
         <div class="row">
             <input type="hidden" value="{{ $client->id??'' }}" name="client_id">
             <div class="form-group col-sm-4">
