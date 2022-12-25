@@ -4,7 +4,7 @@
 @section('content')
 @include('includes.alert-info')
     <div class="card">
-        <div class="card-header"><strong>កែប្រែ-ម្ចាស់ភាគហ៊ុន</strong></div>
+        <div class="card-header bg-custom"><strong>កែប្រែ-ម្ចាស់ភាគហ៊ុន</strong></div>
 
         <form action="{{ route('shareholder.update',['id' => $shareholder->id]) }}" method="POST">
             @csrf

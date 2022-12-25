@@ -4,7 +4,7 @@
 @section('content')
 @include('includes.alert-info')
     <div class="card">
-        <div class="card-header">
+        <div class="card-header bg-custom">
             <strong>បង្កើតម្ចាស់ភាគហ៊ុន</strong>
         </div>
         <form action="{{ route('shareholder.store') }}" method="POST">

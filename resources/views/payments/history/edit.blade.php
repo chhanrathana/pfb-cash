@@ -14,7 +14,7 @@
         @method('PATCH')
 
         <div class="card">
-            <div class="card-header"> <strong>បង់ការប្រាក់</strong></div>
+            <div class="card-header bg-custom"> <strong>បង់ការប្រាក់</strong></div>
             <div class="card-body">
                 <div class="row">
                      <div class="form-group col-sm-4">

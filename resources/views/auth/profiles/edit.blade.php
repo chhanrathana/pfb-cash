@@ -10,7 +10,7 @@
     <form action="{{ route('profile.update',['id' => auth()->user()->id]) }}" method="POST">
         @csrf
         @method('PATCH')
-        <div class="card-header"> <strong>ប្តូរលេខសម្ងាត់</strong></div>
+        <div class="card-header bg-custom"> <strong>ប្តូរលេខសម្ងាត់</strong></div>
 
         <div class="card-body">
             <div class="row">

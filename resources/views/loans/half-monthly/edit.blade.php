@@ -10,7 +10,7 @@
         @include('includes.create-client')
         <input type="hidden" name="loan_id" value="{{ $loan->id }}">
         <div class="card">
-            <div class="card-header"> <strong>ព័ត៌មានប្រាក់កម្ចីកន្លះខែ</strong></div>
+            <div class="card-header bg-custom"> <strong>ព័ត៌មានប្រាក់កម្ចីកន្លះខែ</strong></div>
             <div class="card-body">
                 <div class="row">
                     <div class="form-group col-sm-4">

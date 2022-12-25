@@ -4,7 +4,7 @@
 @section('content')
 @include('includes.alert-info')
     <div class="card">
-        <div class="card-header"><strong>កែប្រែ-ប្រភេទចំណាយ</strong></div>
+        <div class="card-header bg-custom"><strong>កែប្រែ-ប្រភេទចំណាយ</strong></div>
 
         <form action="{{ route('master-data.expense-type.update',['id' => $expense->id]) }}" method="POST">
             @csrf
