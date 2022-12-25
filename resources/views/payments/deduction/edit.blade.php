@@ -12,11 +12,11 @@
         @method('PATCH')
 
         <div class="card">
-            <div class="card-header"> <strong>បង់ប្រាក់ផ្តាច់</strong></div>
+            <div class="card-header bg-custom"> <strong>បង់ប្រាក់ផ្តាច់</strong></div>
             <div class="card-body">
                 <div class="row">
                     <div class="form-group col-sm-4">
-                        <label>មន្រ្តីឥណទាន</label>
+                        <label>ភ្នាក់ងារ</label>
                         <select disabled class="form-control select2 {{ $errors->first('staff_id') ? 'is-invalid':'' }}" name="staff_id">
                             <option value="" selected>[-- ជ្រើសរើស --]</option>
                             @foreach ($staffs as $staff)

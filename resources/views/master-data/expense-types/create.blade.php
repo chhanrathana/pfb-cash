@@ -4,7 +4,7 @@
 @section('content')
 @include('includes.alert-info')
     <div class="card">
-        <div class="card-header">
+        <div class="card-header bg-custom">
             <strong>បញ្ចូល-ប្រភេទចំណាយ</strong>
         </div>
         <form action="{{ route('master-data.expense-type.store') }}" method="POST">

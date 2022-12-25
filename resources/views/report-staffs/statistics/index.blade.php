@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','មន្ដ្រីឥណទាន-ស្ថិតិ')
+@section('title','ភ្នាក់ងារ-ស្ថិតិ')
 @section('content')
 
     @include('report-staffs.statistics.search')

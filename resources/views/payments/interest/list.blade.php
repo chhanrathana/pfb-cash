@@ -13,7 +13,7 @@
                            <th class="text-center text-nowrap">ល.រ</th>
                            <th class="text-center text-nowrap">សភាព</th>
                            <th class="text-center text-nowrap">សាខា</th>
-                           <th class="text-center text-nowrap">មន្រ្តីឥណទាន</th>
+                           <th class="text-center text-nowrap">ភ្នាក់ងារ</th>
                            <th class="text-center text-nowrap">ថ្ងៃត្រូវបង់</th>
                            <th class="text-center text-nowrap">កូដអតិថិជន</th>
                            <th class="text-center text-nowrap">កូដកិច្ចសន្យា</th>

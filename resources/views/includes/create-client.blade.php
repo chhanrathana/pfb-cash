@@ -1,6 +1,6 @@
 {{--loaner--}}
 <div class="card">
-    <div class="card-header bg-custom"><strong>ព័ត៌មានអ្នកខ្ចីប្រាក់</strong></div>
+    <div class="card-header bg-custom"><strong>ព័ត៌មានអ្នកខ្ចីប្រាក់ {{ request('type') == 'group' ? '(មេក្រុម)' : '' }}</strong></div>
     <div class="card-body">
         <div class="row mb-4">
             <div class="col-sm-12">
@@ -179,7 +179,53 @@
         </div>
     </div>
 </div>
+{{-- loan member --}}
+<div class="card">
+    <div class="card-header bg-custom"><strong>ព័ត៌មានសមាជិកខ្ចីប្រាក់</strong></div>
+    <div class="card-body">
+        <div class="row">
+            <input type="hidden" value="{{ $client->id??'' }}" name="client_id">
+            <div class="form-group col-sm-4">
+                <label>ឈ្មោះពេញ <span class="text-danger">*</span></label>
+                <input
+                        class="form-control {{ $errors->first('loaner_name_kh') ? 'is-invalid':'' }}"
+                        name="loaner_name_kh"
+                        type="text"
+                        placeholder="យិនប៊ុនណា"
+                        value="{{ $client->name_kh??old('loaner_name_kh') }}"
+                        maxlength="50">
+                <div class="invalid-feedback">{{ $errors->first('loaner_name_kh') }}</div>
+            </div>
+            <div class="form-group col-sm-4">
+                <label>ភេទ <span class="text-danger">*</span></label>
+                <select class="form-control select2  {{ $errors->first('loaner_sex') ? 'is-invalid':'' }}"
+                        name="loaner_sex" id="sex">
+                    <option value="" selected>[-- ជ្រើសរើស --]</option>
+                    @foreach ($sexes as $sex)
+                        @if ($client)
+                            <option value="{{ $sex->id }}" {{ $client->sex == $sex->id ? 'selected' :  '' }} >{{ $sex->name }}</option>
+                        @else
+                            <option value="{{ $sex->id }}" {{  old('sex') == $sex->id ? 'selected' :  '' }} >{{ $sex->name }}</option>
+                        @endif
+                    @endforeach
+                </select>
+                <div class="invalid-feedback">{{ $errors->first('loaner_sex') }}</div>
+            </div>
 
+            <div class="form-group col-sm-4">
+                <label for="phone_number">លេខទំនាក់ទំនង <span class="text-danger">*</span></label>
+                <input
+                    class="form-control {{ $errors->first('loaner_phone_number') ? 'is-invalid':'' }}"
+                    name="loaner_phone_number"
+                    type="text"
+                    placeholder="0817623XX"
+                    value="{{ $client->phone_number??old('loaner_phone_number') }}"
+                    maxlength="50">
+                <div class="invalid-feedback">{{ $errors->first('loaner_phone_number') }}</div>
+            </div>
+        </div>
+    </div>
+</div>
 {{--first guarantor--}}
 <div class="card">
     <div class="card-header bg-custom"><strong>ព័ត៌មានអ្នកធានា (អាចអត់បញ្ជូលបាន)</strong></div>

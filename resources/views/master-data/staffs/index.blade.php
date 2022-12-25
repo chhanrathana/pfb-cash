@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','តារាង-មន្ដ្រីឥណទាន')
+@section('title','តារាង-ភ្នាក់ងារ')
 @section('content')
     @include('master-data.staffs.search')
     @include('master-data.staffs.list')

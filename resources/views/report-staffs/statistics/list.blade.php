@@ -1,5 +1,5 @@
 <div class="card">    
-    <div class="card-header"><strong>មន្ដ្រីឥណទាន-ស្ថិតិ</strong></div>
+    <div class="card-header"><strong>ភ្នាក់ងារ-ស្ថិតិ</strong></div>
     <div class="card-body">        
         <div class="table-responsive">
             <table class="table table-bordered table-striped table-hover table-sm">
@@ -8,7 +8,7 @@
                         <th class="text-center text-nowrap align-middle" rowspan="2"></th>
                         <th class="text-center text-nowrap align-middle" rowspan="2">ល.រ</th>
                         <th class="text-center text-nowrap align-middle" rowspan="2">សាខា</th>
-                        <th class="text-center text-nowrap align-middle" rowspan="2">មន្ត្រីឥណទាន</th>
+                        <th class="text-center text-nowrap align-middle" rowspan="2">ភ្នាក់ងារ</th>
                         <th class="text-center text-nowrap align-middle" colspan="2">បញ្ចេញ</th>                        
                         <th class="text-center text-nowrap align-middle" colspan="2">អតិថិជន</th>                                                
                         <th class="text-center text-nowrap align-middle" rowspan="2">បញ្ចេញថ្មី</th>

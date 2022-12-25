@@ -39,10 +39,10 @@ class StaffController extends Controller
         try {
             $this->staffService->createStaff($request);
             DB::commit();
-            return redirect()->back()->with('success', 'បញ្ចូលមន្រ្តីឥណទានថ្មីជោគជ័យ!');
+            return redirect()->back()->with('success', 'បញ្ចូលភ្នាក់ងារថ្មីជោគជ័យ!');
         } catch (\Exception $ex) {
             DB::rollback();
-            return redirect()->back()->with('error', 'មិនអាចបញ្ចូលមន្រ្តីឥណទានថ្មីបាន' . $ex->getMessage());
+            return redirect()->back()->with('error', 'មិនអាចបញ្ចូលភ្នាក់ងារថ្មីបាន' . $ex->getMessage());
         }
     }
 
@@ -63,10 +63,10 @@ class StaffController extends Controller
         try {
             $this->staffService->updateStaff($request, $id);
             DB::commit();
-            return redirect()->back()->with('success', 'កែប្រែព័ត៌មានមន្រ្តីឥណទានជោគជ័យ!');
+            return redirect()->back()->with('success', 'កែប្រែព័ត៌មានភ្នាក់ងារជោគជ័យ!');
         } catch (\Exception $ex) {
             DB::rollback();
-            return redirect()->back()->with('error', 'មិនអាចបញ្ចូលមន្រ្តីឥណទានថ្មីបាន' . $ex->getMessage());
+            return redirect()->back()->with('error', 'មិនអាចបញ្ចូលភ្នាក់ងារថ្មីបាន' . $ex->getMessage());
         }
     }
 

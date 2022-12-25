@@ -20,6 +20,7 @@
                         <th class="text-center text-nowrap">ល.រ</th>
                         <th class="text-center text-nowrap">សាខា</th>
                         <th class="text-center text-nowrap">ម្ចាស់ភាគហ៊ុន</th>
+                        <th class="text-center text-nowrap">លេខទូរសព្វ</th>
                         <th class="text-center text-nowrap">ទឹកប្រាក់</th>
                         <th class="text-center text-nowrap">ថ្ងៃដាក់ប្រាក់</th>                                        
                     </tr>
@@ -44,13 +45,14 @@
                         <td class="text-right text-nowrap">{{ $loop->index + 1 }}</td>
                         <td class="text-nowrap">{{$deposit->branch->name??''}}</td>
                         <td class="text-nowrap">{{$deposit->shareholder->name_kh??''}}</td>
+                        <td class="text-nowrap">{{$deposit->shareholder->phone_number??''}}</td>
                         <td class="text-right text-nowrap">{{ number_format($deposit->deposit_amount) }}</td>
                         <td class="text-nowrap">{{$deposit->deposit_datetime}}</td>                                      
                     </tr>
                     @endforeach
 
                     <tr>
-                        <td class="text-right text-nowrap" colspan="3" >សរុប</td>
+                        <td class="text-right text-nowrap" colspan="4" >សរុប</td>
                         <td class="text-center text-font-bold" colspan="3"><strong>{{ number_format($totalDeposit)}}</strong> </td>                        
                     </tr>   
                 </tbody>

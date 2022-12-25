@@ -1,5 +1,5 @@
 <div class="card">
-    <div class="card-header"><strong>ចំនូលសង្ខេប <span class="text-primary">{{ $branch->name??'' }}</span> </strong>
+    <div class="card-header bg-custom"><strong>ចំនូលសង្ខេប <span class="text-primary">{{ $branch->name??'' }}</span> </strong>
     </div>
     <div class="card-body">
         <div class="row">

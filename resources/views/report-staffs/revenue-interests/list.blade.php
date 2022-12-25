@@ -1,5 +1,5 @@
 <div class="card">
-    <div class="card-header"><strong>មន្ដ្រីឥណទាន-ចំណេញ</strong></div>
+    <div class="card-header"><strong>ភ្នាក់ងារ-ចំណេញ</strong></div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered table-striped table-hover table-sm">
@@ -7,7 +7,7 @@
                 <tr>
                     <th class="text-center text-nowrap">ល.រ</th>
                     <th class="text-center text-nowrap">សាខា</th>
-                    <th class="text-center text-nowrap">មន្ត្រីឥណទាន</th>
+                    <th class="text-center text-nowrap">ភ្នាក់ងារ</th>
                     {{-- <th class="text-center text-nowrap">ប្រាក់ដើមសរុប</th> --}}
                     <th class="text-center text-nowrap">ប្រាក់ការសរុប</th>
                 </tr>

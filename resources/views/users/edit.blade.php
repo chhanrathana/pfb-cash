@@ -5,7 +5,7 @@
 @section('content')
 @include('includes.alert-info')
     <div class="card">
-        <div class="card-header">
+        <div class="card-header bg-custom">
             <strong>បង្កើតអ្នកប្រើប្រាស់</strong>
         </div>
         <form action="{{ route('user.update',['id' => $user->id]) }}" method="POST">

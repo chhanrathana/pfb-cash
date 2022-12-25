@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-header">
         <div class="row">
-            <div class="col"><strong>តារាង-មន្ដ្រីឥណទាន</strong></div>
+            <div class="col"><strong>តារាង-ភ្នាក់ងារ</strong></div>
             <div class="col">
                 <a class="float-right btn btn-md btn-info" href="{{ route('master-data.staff.create') }}">
                      <strong>បញ្ចូលថ្មី</strong>

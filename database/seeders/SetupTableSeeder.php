@@ -11,6 +11,7 @@ use App\Models\StaffStatus;
 use App\Models\ClientStatus;
 use App\Models\ExpenseType;
 use App\Models\LoanStatus;
+use App\Models\LoanType;
 use App\Models\Staff;
 use App\Models\PaymentStatus;
 
@@ -98,6 +99,23 @@ class SetupTableSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]
+        ]);
+
+        LoanType::insert([
+            [
+                'id' => 'individual',
+                'name_kh' => 'ឯកជន',
+                'name_en' => 'Individual',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'id' => 'group',
+                'name_kh' => 'ក្រុម',
+                'name_en' => 'Group',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],           
         ]);
 
         PaymentStatus::insert([

@@ -4,7 +4,7 @@
 @section('content')
 @include('includes.alert-info')
     <div class="card">
-        <div class="card-header"><strong>កែប្រែ-សាខា</strong></div>
+        <div class="card-header bg-custom"><strong>កែប្រែ-សាខា</strong></div>
 
         <form action="{{ route('master-data.branch.update',['id' => $branch->id]) }}" method="POST">
             @csrf

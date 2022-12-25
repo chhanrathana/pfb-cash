@@ -12,7 +12,7 @@
         @method('PATCH')
 
         <div class="card">
-            <div class="card-header"> <strong>កែប្រែ-ថ្ងៃបង់ការប្រាក់​</strong></div>
+            <div class="card-header bg-custom"> <strong>កែប្រែ-ថ្ងៃបង់ការប្រាក់​</strong></div>
             <div class="card-body">
                 <div class="row">
                     <div class="form-group col-sm-4">

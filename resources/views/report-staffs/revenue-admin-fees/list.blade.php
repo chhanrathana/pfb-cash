@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header">
-        <strong>មន្ដ្រីឥណទាន-ចំណេញសេវារដ្ឋបាល</strong>            
+        <strong>ភ្នាក់ងារ-ចំណេញសេវារដ្ឋបាល</strong>            
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -9,7 +9,7 @@
                     <tr>
                         <th class="text-center text-nowrap">ល.រ</th>
                         <th class="text-center text-nowrap">សាខា</th>
-                        <th class="text-center text-nowrap">មន្ត្រីឥណទាន</th>
+                        <th class="text-center text-nowrap">ភ្នាក់ងារ</th>
                         <th class="text-center text-nowrap">ប្រតិបត្តិការ</th>
                         <th class="text-center text-nowrap">ប្រាក់ដើម</th>
                         <th class="text-center text-nowrap">សេវារដ្ឋបាល</th>                        
