@@ -161,7 +161,8 @@
     </style>
 </head>
 <body>
-@yield('title')
-@yield('html')
+<?php echo $__env->yieldContent('title'); ?>
+<?php echo $__env->yieldContent('html'); ?>
 </body>
 </html>
+<?php /**PATH E:\Project\SDT\PFB CASH\Source Code\resources\views/layouts/pdf-layout.blade.php ENDPATH**/ ?>

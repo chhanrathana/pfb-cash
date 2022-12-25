@@ -116,7 +116,7 @@ class LoanController extends Controller
     }
 
     public function download(Request $request){
-        $html = view('loans.print-loan',['loan' => Loan::find($request->id)]);
+        $html = view('loans.print-loan-group',['loan' => Loan::find($request->id)]);
         return PDFService::reportPDF($html, $title = 'របាការណ៍', $orientation = 'P', $font = 12, $printCard = false, $mt = 10, $ml = 10, $mr = 10);
     }
 
