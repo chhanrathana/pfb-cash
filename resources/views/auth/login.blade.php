@@ -46,11 +46,6 @@
                              alt="">
                     </div>
                 </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="span"><b>𝐏𝐎𝐖𝐄𝐑 𝐁𝐘: 𝐒𝐈𝐒 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐓𝐈𝐂𝐒</b></div>
-                </div>
-            </div>
+            </div>            
         </div>
 @stop

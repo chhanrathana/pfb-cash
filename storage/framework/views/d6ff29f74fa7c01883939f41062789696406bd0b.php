@@ -27,8 +27,8 @@
 <?php echo $__env->make('includes.sound', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
     <div class="c-sidebar-brand d-lg-down-none">
-        <img class="c-sidebar-brand-full" width="300" height="55" src="<?php echo e(asset('img/logo.png')); ?>" alt="Loan">
-        <img class="c-sidebar-brand-minimized" width="50" height="50" src="<?php echo e(asset('img/logo.png')); ?>" alt="Loan">
+        <img class="c-sidebar-brand-full" width="300" height="55" src="<?php echo e(asset('img/logo.jpg')); ?>" alt="Loan">
+        <img class="c-sidebar-brand-minimized" width="50" height="50" src="<?php echo e(asset('img/logo.jpg')); ?>" alt="Loan">
     </div>
     <?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent"
@@ -45,7 +45,7 @@
             </svg>
         </button>
         <a class="c-header-brand d-lg-none" href="#">
-            <img width="180" height="50" src="<?php echo e(asset('img/logo.png')); ?>" alt="Loan">
+            <img width="180" height="50" src="<?php echo e(asset('img/logo.jpg')); ?>" alt="Loan">
         </a>
 
         <button class="c-header-toggler c-class-toggler mfs-3 d-md-down-none" type="button" data-target="#sidebar"
@@ -82,7 +82,9 @@
         </main>
 
         <footer class="c-footer">
-
+            <div class="text-center">
+                <p>Developed by <a href="http://sisinformatics.com" target="_blank">SIS Informatics</p>
+            </div>            
         </footer>
     </div>
 </div>
