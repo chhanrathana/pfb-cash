@@ -1,0 +1,736 @@
+{
+    "RECORDS": [
+        {
+            "user_type_id": "0",
+            "url_id": "URL001"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL002"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL003"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL004"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL005"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL006"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL007"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL008"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL009"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL010"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL011"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL012"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL013"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL014"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL015"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL016"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL017"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL018"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL019"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL020"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL021"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL022"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL023"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL024"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL025"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL026"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL027"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL028"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL029"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL030"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL031"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL032"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL033"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL034"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL036"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL037"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL038"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL039"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL040"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL042"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL043"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL044"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL045"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL046"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL047"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL048"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL050"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL051"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL052"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL053"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL054"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL056"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL057"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL058"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL059"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL060"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL061"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL062"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL063"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL064"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL065"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL066"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL067"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL068"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL069"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL070"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL071"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL072"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL073"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL074"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL075"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL076"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL078"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL079"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL080"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL081"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL082"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL083"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL084"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL085"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL087"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL089"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL090"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL091"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL092"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL093"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL094"
+        },
+        {
+            "user_type_id": "0",
+            "url_id": "URL095"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL001"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL002"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL003"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL004"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL005"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL006"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL007"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL008"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL009"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL010"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL011"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL012"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL013"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL014"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL015"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL016"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL017"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL018"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL019"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL020"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL021"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL022"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL023"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL024"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL025"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL026"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL027"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL028"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL029"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL030"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL031"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL032"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL033"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL034"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL035"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL036"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL037"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL038"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL039"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL040"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL041"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL042"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL043"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL044"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL045"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL046"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL047"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL048"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL049"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL050"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL051"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL052"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL053"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL054"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL055"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL056"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL057"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL058"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL059"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL060"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL061"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL062"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL063"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL064"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL065"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL066"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL067"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL068"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL069"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL070"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL071"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL072"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL073"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL074"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL075"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL076"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL077"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL078"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL079"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL080"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL081"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL082"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL083"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL084"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL085"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL086"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL087"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL088"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL089"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL090"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL091"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL092"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL093"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL094"
+        },
+        {
+            "user_type_id": "1",
+            "url_id": "URL095"
+        }
+    ]
+}

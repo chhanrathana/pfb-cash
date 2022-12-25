@@ -5,10 +5,10 @@
             "method": "GET",
             "uri": "/",
             "route_name": "dashboard",
-            "is_menu": "1",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "1",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -16,10 +16,10 @@
             "method": "GET",
             "uri": "address/{type}/{id}",
             "route_name": "address",
-            "is_menu": "0",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -27,10 +27,10 @@
             "method": "GET",
             "uri": "dashboard/print",
             "route_name": "dashboard.print",
-            "is_menu": "0",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -38,10 +38,10 @@
             "method": "GET",
             "uri": "expense/item",
             "route_name": "expense.item.index",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -49,10 +49,10 @@
             "method": "POST",
             "uri": "expense/item",
             "route_name": "expense.item.store",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -60,10 +60,10 @@
             "method": "GET",
             "uri": "expense/item/create",
             "route_name": "expense.item.create",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -71,10 +71,10 @@
             "method": "PATCH",
             "uri": "expense/item/{id}",
             "route_name": "expense.item.update",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -82,10 +82,10 @@
             "method": "GET",
             "uri": "expense/item/{id}",
             "route_name": "expense.item.show",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -93,10 +93,10 @@
             "method": "DELETE",
             "uri": "expense/item/{id}",
             "route_name": "expense.item.destroy",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -104,10 +104,10 @@
             "method": "GET",
             "uri": "expense/item/{id}/edit",
             "route_name": "expense.item.edit",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -115,10 +115,10 @@
             "method": "POST",
             "uri": "loan/daily",
             "route_name": "loan.daily.store",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -126,10 +126,10 @@
             "method": "GET",
             "uri": "loan/daily/create",
             "route_name": "loan.daily.create",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -137,10 +137,10 @@
             "method": "PATCH",
             "uri": "loan/daily/{id}",
             "route_name": "loan.daily.update",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -148,10 +148,10 @@
             "method": "GET",
             "uri": "loan/daily/{id}/edit",
             "route_name": "loan.daily.edit",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -159,10 +159,10 @@
             "method": "GET",
             "uri": "loan/download",
             "route_name": "loan.download",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -170,10 +170,10 @@
             "method": "GET",
             "uri": "loan/export",
             "route_name": "loan.export",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -181,10 +181,10 @@
             "method": "POST",
             "uri": "loan/half-monthly",
             "route_name": "loan.half-monthly.store",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -192,10 +192,10 @@
             "method": "GET",
             "uri": "loan/half-monthly/create",
             "route_name": "loan.half-monthly.create",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -203,10 +203,10 @@
             "method": "PATCH",
             "uri": "loan/half-monthly/{id}",
             "route_name": "loan.half-monthly.update",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -214,10 +214,10 @@
             "method": "GET",
             "uri": "loan/half-monthly/{id}/edit",
             "route_name": "loan.half-monthly.edit",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -225,10 +225,10 @@
             "method": "GET",
             "uri": "loan/list",
             "route_name": "loan.list.index",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -236,10 +236,10 @@
             "method": "PATCH",
             "uri": "loan/list/{id}",
             "route_name": "loan.list.update",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -247,10 +247,10 @@
             "method": "GET",
             "uri": "loan/list/{id}",
             "route_name": "loan.list.show",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -258,10 +258,10 @@
             "method": "DELETE",
             "uri": "loan/list/{id}",
             "route_name": "loan.list.destroy",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -269,10 +269,10 @@
             "method": "GET",
             "uri": "loan/list/{id}/edit",
             "route_name": "loan.list.edit",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -280,10 +280,10 @@
             "method": "POST",
             "uri": "loan/twice-weekly",
             "route_name": "loan.twice-weekly.store",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -291,10 +291,10 @@
             "method": "GET",
             "uri": "loan/twice-weekly/create",
             "route_name": "loan.twice-weekly.create",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -302,10 +302,10 @@
             "method": "PATCH",
             "uri": "loan/twice-weekly/{id}",
             "route_name": "loan.twice-weekly.update",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -313,10 +313,10 @@
             "method": "GET",
             "uri": "loan/twice-weekly/{id}/edit",
             "route_name": "loan.twice-weekly.edit",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -324,10 +324,10 @@
             "method": "POST",
             "uri": "loan/weekly",
             "route_name": "loan.weekly.store",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -335,10 +335,10 @@
             "method": "GET",
             "uri": "loan/weekly/create",
             "route_name": "loan.weekly.create",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -346,10 +346,10 @@
             "method": "PATCH",
             "uri": "loan/weekly/{id}",
             "route_name": "loan.weekly.update",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -357,10 +357,10 @@
             "method": "GET",
             "uri": "loan/weekly/{id}/edit",
             "route_name": "loan.weekly.edit",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -368,10 +368,10 @@
             "method": "POST",
             "uri": "master-data/branch",
             "route_name": "master-data.branch.store",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -379,10 +379,10 @@
             "method": "GET",
             "uri": "master-data/branch",
             "route_name": "master-data.branch.index",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -390,10 +390,10 @@
             "method": "GET",
             "uri": "master-data/branch/create",
             "route_name": "master-data.branch.create",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -401,10 +401,10 @@
             "method": "DELETE",
             "uri": "master-data/branch/{id}",
             "route_name": "master-data.branch.destroy",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -412,10 +412,10 @@
             "method": "GET",
             "uri": "master-data/branch/{id}",
             "route_name": "master-data.branch.show",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -423,10 +423,10 @@
             "method": "PATCH",
             "uri": "master-data/branch/{id}",
             "route_name": "master-data.branch.update",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -434,10 +434,10 @@
             "method": "GET",
             "uri": "master-data/branch/{id}/edit",
             "route_name": "master-data.branch.edit",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -445,10 +445,10 @@
             "method": "GET",
             "uri": "master-data/deposit",
             "route_name": "master-data.deposit.index",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -456,10 +456,10 @@
             "method": "POST",
             "uri": "master-data/deposit",
             "route_name": "master-data.deposit.store",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -467,10 +467,10 @@
             "method": "GET",
             "uri": "master-data/deposit/create",
             "route_name": "master-data.deposit.create",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -478,10 +478,10 @@
             "method": "DELETE",
             "uri": "master-data/deposit/{id}",
             "route_name": "master-data.deposit.destroy",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -489,10 +489,10 @@
             "method": "PATCH",
             "uri": "master-data/deposit/{id}",
             "route_name": "master-data.deposit.update",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -500,10 +500,10 @@
             "method": "GET",
             "uri": "master-data/deposit/{id}",
             "route_name": "master-data.deposit.show",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -511,10 +511,10 @@
             "method": "GET",
             "uri": "master-data/deposit/{id}/edit",
             "route_name": "master-data.deposit.edit",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -522,10 +522,10 @@
             "method": "POST",
             "uri": "master-data/expense-type",
             "route_name": "master-data.expense-type.store",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -533,10 +533,10 @@
             "method": "GET",
             "uri": "master-data/expense-type",
             "route_name": "master-data.expense-type.index",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -544,10 +544,10 @@
             "method": "GET",
             "uri": "master-data/expense-type/create",
             "route_name": "master-data.expense-type.create",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -555,10 +555,10 @@
             "method": "PATCH",
             "uri": "master-data/expense-type/{id}",
             "route_name": "master-data.expense-type.update",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -566,10 +566,10 @@
             "method": "DELETE",
             "uri": "master-data/expense-type/{id}",
             "route_name": "master-data.expense-type.destroy",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -577,10 +577,10 @@
             "method": "GET",
             "uri": "master-data/expense-type/{id}",
             "route_name": "master-data.expense-type.show",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -588,10 +588,10 @@
             "method": "GET",
             "uri": "master-data/expense-type/{id}/edit",
             "route_name": "master-data.expense-type.edit",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -599,10 +599,10 @@
             "method": "GET",
             "uri": "master-data/staff",
             "route_name": "master-data.staff.index",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -610,10 +610,10 @@
             "method": "POST",
             "uri": "master-data/staff",
             "route_name": "master-data.staff.store",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -621,10 +621,10 @@
             "method": "GET",
             "uri": "master-data/staff/create",
             "route_name": "master-data.staff.create",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -632,10 +632,10 @@
             "method": "DELETE",
             "uri": "master-data/staff/{id}",
             "route_name": "master-data.staff.destroy",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -643,10 +643,10 @@
             "method": "PATCH",
             "uri": "master-data/staff/{id}",
             "route_name": "master-data.staff.update",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -654,10 +654,10 @@
             "method": "GET",
             "uri": "master-data/staff/{id}",
             "route_name": "master-data.staff.show",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -665,10 +665,10 @@
             "method": "GET",
             "uri": "master-data/staff/{id}/edit",
             "route_name": "master-data.staff.edit",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -676,10 +676,10 @@
             "method": "GET",
             "uri": "payment-log/deduction",
             "route_name": "payment-log.deduction",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -687,10 +687,10 @@
             "method": "POST",
             "uri": "payment-log/deduction-reverse/{id}",
             "route_name": "payment-log.deduction-reverse",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -698,10 +698,10 @@
             "method": "POST",
             "uri": "payment/deduction",
             "route_name": "payment.deduction.store",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -709,10 +709,10 @@
             "method": "GET",
             "uri": "payment/deduction",
             "route_name": "payment.deduction.index",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -720,10 +720,10 @@
             "method": "PATCH",
             "uri": "payment/deduction/{id}",
             "route_name": "payment.deduction.update",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -731,10 +731,10 @@
             "method": "GET",
             "uri": "payment/deduction/{id}/edit",
             "route_name": "payment.deduction.edit",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -742,10 +742,10 @@
             "method": "GET",
             "uri": "payment/download",
             "route_name": "payment.download",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -753,10 +753,10 @@
             "method": "GET",
             "uri": "payment/export",
             "route_name": "payment.export",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -764,10 +764,10 @@
             "method": "POST",
             "uri": "payment/interest",
             "route_name": "payment.interest.store",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -775,10 +775,10 @@
             "method": "GET",
             "uri": "payment/interest",
             "route_name": "payment.interest.index",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -786,10 +786,10 @@
             "method": "PATCH",
             "uri": "payment/interest/{id}",
             "route_name": "payment.interest.update",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -797,10 +797,10 @@
             "method": "GET",
             "uri": "payment/interest/{id}/edit",
             "route_name": "payment.interest.edit",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -808,10 +808,10 @@
             "method": "GET",
             "uri": "payment/list",
             "route_name": "payment.list.index",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -819,10 +819,10 @@
             "method": "GET",
             "uri": "report-financial/expense",
             "route_name": "report-financial.expense",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -830,10 +830,10 @@
             "method": "GET",
             "uri": "report-financial/revenue-admin-fee",
             "route_name": "report-financial.revenue-admin-fee",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -841,10 +841,10 @@
             "method": "GET",
             "uri": "report-financial/revenue-dividend",
             "route_name": "report-financial.revenue-dividend",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -852,10 +852,10 @@
             "method": "GET",
             "uri": "report-financial/revenue-interest",
             "route_name": "report-financial.revenue-interest",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -863,10 +863,10 @@
             "method": "GET",
             "uri": "report-financial/revenue-interest-export",
             "route_name": "report-financial.revenue-interest-export",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -874,10 +874,10 @@
             "method": "GET",
             "uri": "report-operation/loan",
             "route_name": "report-operation.loan",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -885,10 +885,10 @@
             "method": "GET",
             "uri": "report-operation/loan-export",
             "route_name": "report-operation.loan-export",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -896,10 +896,10 @@
             "method": "GET",
             "uri": "report-staff/revenue-admin-fee",
             "route_name": "report-staff.revenue-admin-fee",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -907,10 +907,10 @@
             "method": "GET",
             "uri": "report-staff/revenue-interest",
             "route_name": "report-staff.revenue-interest",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -918,10 +918,10 @@
             "method": "GET",
             "uri": "report-staff/revenue-interest-export/{id}",
             "route_name": "report-staff.revenue-interest-export",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -929,10 +929,10 @@
             "method": "GET",
             "uri": "report-staff/statistic",
             "route_name": "report-staff.statistic",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -940,10 +940,10 @@
             "method": "GET",
             "uri": "user",
             "route_name": "user.index",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -951,10 +951,10 @@
             "method": "POST",
             "uri": "user",
             "route_name": "user.store",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -962,10 +962,10 @@
             "method": "GET",
             "uri": "user/create",
             "route_name": "user.create",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -973,10 +973,10 @@
             "method": "DELETE",
             "uri": "user/{id}",
             "route_name": "user.destroy",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -984,10 +984,10 @@
             "method": "PATCH",
             "uri": "user/{id}",
             "route_name": "user.update",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -995,10 +995,10 @@
             "method": "GET",
             "uri": "user/{id}",
             "route_name": "user.show",
-            "is_menu": "",
             "acitve": "1",
-            "created_at": "",
-            "updated_at": "",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
             "deleted_at": ""
         },
         {
@@ -1006,8 +1006,41 @@
             "method": "GET",
             "uri": "user/{id}/edit",
             "route_name": "user.edit",
-            "is_menu": "",
             "acitve": "1",
+            "is_menu": "0",
+            "created_at": "24/12/2022 19:56:13",
+            "updated_at": "24/12/2022 19:56:13",
+            "deleted_at": ""
+        },
+        {
+            "id": "URL093",
+            "method": "GET",
+            "uri": "profile",
+            "route_name": "profile.index",
+            "acitve": "1",
+            "is_menu": "1",
+            "created_at": "",
+            "updated_at": "",
+            "deleted_at": ""
+        },
+        {
+            "id": "URL094",
+            "method": "GET",
+            "uri": "profile/{id}/edit",
+            "route_name": "profile.edit",
+            "acitve": "1",
+            "is_menu": "1",
+            "created_at": "",
+            "updated_at": "",
+            "deleted_at": ""
+        },
+        {
+            "id": "URL095",
+            "method": "PATCH",
+            "uri": "profile/{id}",
+            "route_name": "profile.update",
+            "acitve": "1",
+            "is_menu": "1",
             "created_at": "",
             "updated_at": "",
             "deleted_at": ""
