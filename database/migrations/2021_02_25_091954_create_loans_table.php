@@ -49,6 +49,9 @@ class CreateLoansTable extends Migration
             $table->uuid('branch_id')->nullable();
             $table->foreign('branch_id')->references('id')->on('branches');
 
+            $table->string('loan_type_id',10)->nullable();
+            $table->foreign('loan_type_id')->references('id')->on('loan_types');
+
             $table->unique(['code','branch_id'],'loans_code_unique');
         });
     }

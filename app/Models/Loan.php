@@ -112,6 +112,11 @@ class Loan extends BaseModel
         return $this->hasMany(Payment::class)->orderBy('sort');
     }
 
+    public function members()
+    {
+        return $this->hasMany(LoanMember::class);
+    }
+
     public function has_paid_payments(){
         return $this->hasMany(Payment::class)->whereNotNull('last_payment_paid_date')->orderBy('sort');
     }
