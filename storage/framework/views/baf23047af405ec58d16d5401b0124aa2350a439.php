@@ -10,7 +10,7 @@
                                    value="<?php echo e($type -> id); ?>" <?php echo e($loan -> loan_type_id == $type -> id ? 'checked' : ''); ?>>
                         <?php else: ?>
                             <input onclick="location.href=`/loan/daily/create?type=<?php echo e($type->id); ?>`" class="form-check-input" type="radio" name="loan_type" id="<?php echo e($type -> id); ?>"
-                                   value="<?php echo e($type -> id); ?>" <?php echo e($loan -> loan_type_id == $type -> id ? 'checked' : ''); ?>>
+                                   value="<?php echo e($type -> id); ?>" <?php echo e(old('loan_type') == $type -> id ? 'checked' : ''); ?>>
                         <?php endif; ?>
                         <label class="form-check-label cursor-pointer <?php echo e(request('type') == $type -> id ? 'text-primary' : ''); ?>"
                                for="<?php echo e($type -> id); ?>">
@@ -185,7 +185,7 @@
         </div>
     </div>
 </div>
-<?php if(request('type') == 'group' || ($loan -> loan_type_id == 'group')): ?>
+<?php if(request('type') == 'group' || ($loan && $loan -> loan_type_id == 'group')): ?>
     
     <div class="card">
         <div class="card-header bg-custom"><strong>ព័ត៌មានសមាជិកខ្ចីប្រាក់ <span class="text-danger">*</span></strong>

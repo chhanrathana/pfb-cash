@@ -10,7 +10,7 @@
                                    value="{{ $type -> id }}" {{ $loan -> loan_type_id == $type -> id ? 'checked' : '' }}>
                         @else
                             <input onclick="location.href=`/loan/daily/create?type={{$type->id}}`" class="form-check-input" type="radio" name="loan_type" id="{{ $type -> id }}"
-                                   value="{{ $type -> id }}" {{ $loan -> loan_type_id == $type -> id ? 'checked' : '' }}>
+                                   value="{{ $type -> id }}" {{ old('loan_type') == $type -> id ? 'checked' : '' }}>
                         @endif
                         <label class="form-check-label cursor-pointer {{ request('type') == $type -> id ? 'text-primary' : '' }}"
                                for="{{ $type -> id }}">
@@ -183,7 +183,7 @@
         </div>
     </div>
 </div>
-@if(request('type') == 'group' || ($loan -> loan_type_id == 'group'))
+@if(request('type') == 'group' || ($loan && $loan -> loan_type_id == 'group'))
     {{-- loan member --}}
     <div class="card">
         <div class="card-header bg-custom"><strong>ព័ត៌មានសមាជិកខ្ចីប្រាក់ <span class="text-danger">*</span></strong>

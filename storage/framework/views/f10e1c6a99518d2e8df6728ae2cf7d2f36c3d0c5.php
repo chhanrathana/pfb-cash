@@ -1,8 +1,9 @@
+
 <?php $__env->startSection('html'); ?>
     <h2 class="text-center heading-title-center">
          តារាងកាលវិភាគសងប្រាក់សងប្រាក់
     </h2>
-    <div class="row">
+    <div class="row" style="padding-top: 20px;">
         <table style="width: 100%; font-size:10px" class="table-non-border td-border-non line-height-2">
             <tr>
                 <td>ឈ្មោះមេក្រុម</td>
@@ -60,11 +61,9 @@
             <tr>
                 <th style="width: 5%; font-size: smaller; padding: 4px;">ល.រ</th>
                 <th colspan="2" style="width: 15%; font-size: smaller; padding: 4px;">កាលបរិច្ឆេទសងប្រាក់</th>
-                <th style="width: 10%; font-size: smaller; padding: 4px;">អាង អាត់</th>
-                <th style="width: 10%; font-size: smaller; padding: 4px;">អាង អាត់</th>
-                <th style="width: 10%; font-size: smaller; padding: 4px;">អាង អាត់</th>
-                <th style="width: 10%; font-size: smaller; padding: 4px;">អាង អាត់</th>
-                <th style="width: 10%; font-size: smaller; padding: 4px;">អាង អាត់</th>
+                <?php $__currentLoopData = $loan -> members; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $member): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <th style="width: 10%; font-size: smaller; padding: 4px;"><?php echo e($member -> name_kh ?? '- - -'); ?></th>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 <th style="width: 10%; font-size: smaller; padding: 4px;">សម្គាល់ផ្សេងៗ</th>
             </tr>
 
@@ -73,7 +72,6 @@
                     <td style="font-size: smaller; padding: 4px" class="text-center text-nowrap"><?php echo e($loop->index + 1); ?></td>
                     <td style="font-size: smaller; padding: 4px" class="text-center" ><?php echo e($payment->payment_date??''); ?> </td>
                     <td style="font-size: smaller; padding: 4px" class="text-center" nowrap="nowrap"><?php echo e(convertDaytoKhmer(date('D',strtotime($payment->getRawOriginal('payment_date'))))); ?></td>
-                    <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap"></td>
                     <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap"></td>
                     <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap"></td>
                     <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap"></td>

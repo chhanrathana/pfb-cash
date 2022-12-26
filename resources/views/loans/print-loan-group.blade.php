@@ -3,7 +3,7 @@
     <h2 class="text-center heading-title-center">
          តារាងកាលវិភាគសងប្រាក់សងប្រាក់
     </h2>
-    <div class="row">
+    <div class="row" style="padding-top: 20px;">
         <table style="width: 100%; font-size:10px" class="table-non-border td-border-non line-height-2">
             <tr>
                 <td>ឈ្មោះមេក្រុម</td>
@@ -61,11 +61,9 @@
             <tr>
                 <th style="width: 5%; font-size: smaller; padding: 4px;">ល.រ</th>
                 <th colspan="2" style="width: 15%; font-size: smaller; padding: 4px;">កាលបរិច្ឆេទសងប្រាក់</th>
-                <th style="width: 10%; font-size: smaller; padding: 4px;">អាង អាត់</th>
-                <th style="width: 10%; font-size: smaller; padding: 4px;">អាង អាត់</th>
-                <th style="width: 10%; font-size: smaller; padding: 4px;">អាង អាត់</th>
-                <th style="width: 10%; font-size: smaller; padding: 4px;">អាង អាត់</th>
-                <th style="width: 10%; font-size: smaller; padding: 4px;">អាង អាត់</th>
+                @foreach($loan -> members as $member)
+                    <th style="width: 10%; font-size: smaller; padding: 4px;">{{ $member -> name_kh ?? '- - -' }}</th>
+                @endforeach
                 <th style="width: 10%; font-size: smaller; padding: 4px;">សម្គាល់ផ្សេងៗ</th>
             </tr>
 
@@ -79,7 +77,7 @@
                     <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap"></td>
                     <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap"></td>
                     <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap"></td>
-                    <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap"></td>
+                    <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap">{{ number_format($payment->total_amount/4) }}</td>
                 </tr>
             @endforeach
         </table>
