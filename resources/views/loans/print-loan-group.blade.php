@@ -29,7 +29,7 @@
                 <td>{{$loan->client->name_kh}}</td>
 
                 <td>ប្រភេទកម្ចី</td>
-                <td>{{$loan->interest->name??''}} </td>
+                <td>{{$loan->interest->name??''}} ({{ $loan -> type -> name_kh }})</td>
             </tr>
             <tr>
                 <td>អាស័យដ្ឋាន</td>

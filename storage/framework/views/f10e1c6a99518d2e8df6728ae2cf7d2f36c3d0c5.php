@@ -29,7 +29,7 @@
                 <td><?php echo e($loan->client->name_kh); ?></td>
 
                 <td>ប្រភេទកម្ចី</td>
-                <td><?php echo e($loan->interest->name??''); ?> </td>
+                <td><?php echo e($loan->interest->name??''); ?> (<?php echo e($loan -> type -> name_kh); ?>)</td>
             </tr>
             <tr>
                 <td>អាស័យដ្ឋាន</td>
