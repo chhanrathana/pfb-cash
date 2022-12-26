@@ -3,51 +3,60 @@
     <h2 class="text-center heading-title-center">
          តារាងកាលវិភាគសងប្រាក់សងប្រាក់
     </h2>
-    <div class="row" style="padding-top: 20px;">
-        <table style="width: 100%; font-size:10px" class="table-non-border td-border-non line-height-2">
+    <div class="row">
+        <table style="width: 100%; font-size:10px; margin-top:20px" class="table-non-border td-border-non line-height-2">
             <tr>
-                <td>ឈ្មោះមេក្រុម</td>
-                <td><strong><?php echo e($loan->client->name_kh); ?></strong></td>
-                <td>សមាជិកទី០១</td>
-                <td><strong><?php echo e(($loan->members[0])->name_kh??'......'); ?></strong></td>
-                <td>សមាជិកទី០៣</td>
-                <td><strong><?php echo e(($loan->members[2])->name_kh??'......'); ?></strong></td>
+                <td>កូដអតិថិជន</td>
+                <td><?php echo e($loan->client->code); ?></td>
+                <td>ភ្នាក់ងារ</td>
+                <td> <?php echo e($loan->staff->name_kh??''); ?> </td>
             </tr>
             <tr>
-                <td>លេខទូរស័ព្ទ</td>
-                <td><strong><?php echo e($loan->client->phone_number ?? '......'); ?></strong></td>
-                <td>សមាជិកទី០២</td>
-                <td><strong><?php echo e(($loan->members[1])->name_kh??'......'); ?></strong></td>
-                <td>សមាជិកទី០៤</td>
-                <td><strong><?php echo e(($loan->members[3])->name_kh??'......'); ?></strong></td>
+                <td>កូដសាខា</td>
+                <td><?php echo e($loan->branch->code??''); ?></td>
+                <td>ឈ្មោះសាខា</td>
+                <td> <?php echo e($loan->branch->name??''); ?></td>
             </tr>
             <tr>
-                <td>លេខកូដកម្ចី</td>
-                <td><strong><?php echo e($loan->code); ?></strong></td>
-                <td>សមាជិកទី០៥</td>
-                <td><strong><?php echo e(($loan->members[4])->name_kh??'......'); ?></strong></td>
+                <td>លេខកូដកិច្ចសន្យា</td>
+                <td><?php echo e($loan->code); ?></td>
 
-                <td>អាសយដ្ឋាន</td>
-                <td><strong><?php echo e($loan->client->address ??'......'); ?></strong></td>
-            </tr>
-        </table>
-        <hr>
-        <table style="width: 100%; font-size:10px" class="table-non-border td-border-non line-height-2">
-            <tr>
-                <td>ចំនួនទឹកប្រាក់ខ្ចី</td>
-                <td><strong><?php echo e(number_format($loan->principal_amount)); ?> ៛</strong></td>
-                <td >ទឹកប្រាក់ជាអក្សរ</td>
-                <td><strong><?php echo e($loan -> principal_amount_as_word()); ?>រៀល</strong></td>
-                <td>ប្រភេទប្រាក់កម្ចី</td>
-                <td><strong><?php echo e($loan-> type -> name_kh); ?></strong></td>
+                <td>លេខទំនាក់ទំនងភ្នាក់ងារ</td>
+                <td><?php echo e($loan->staff->phone_number??''); ?> </td>
             </tr>
             <tr>
-                <td >រយះពេលខ្ចី</td>
-                <td><strong><?php echo e($loan->term); ?> ដង</strong></td>
-                <td >កាលបរិច្ឆេទខ្ចី</td>
-                <td><strong><?php echo e($loan->registration_date); ?></strong></td>
-                <td >កាលបរិច្ឆេទសងលើកដំបូង</td>
-                <td><strong><?php echo e($loan->started_payment_date); ?></strong></td>
+                <td >ឈ្មោះអតិថិជន(មេក្រុម)</td>
+                <td><?php echo e($loan->client->name_kh); ?></td>
+
+                <td>ប្រភេទកម្ចី</td>
+                <td><?php echo e($loan->interest->name??''); ?> </td>
+            </tr>
+            <tr>
+                <td>អាស័យដ្ឋាន</td>
+                <td><?php echo e($loan->client->address); ?></td>
+
+                <td>ចំនួនកាលវិភាគ</td>
+                <td><?php echo e(count($loan->payments)); ?> </td>
+            </tr>
+            <tr>
+                <td>លេខទំនាក់ទំនង</td>
+                <td><?php echo e($loan->client->phone_number); ?></td>
+
+                <td>ចំនួនទឹកប្រាក់</td>
+                <td><?php echo e(number_format($loan->principal_amount)); ?></td>
+            </tr>
+            <tr>
+                <td>ជំហាន</td>
+                <td><?php echo e($loan->client->loans->count()); ?></td>
+                <td>រូបិយប័ណ្ណ</td>
+                <td>រៀល </td>
+            </tr>
+            <tr>
+                <td>ថ្ងៃសងដំបូង</td>
+                <td><?php echo e($loan->started_payment_date); ?></td>
+
+                <td>ថ្ងៃផុតកំណត់</td>
+                <td><?php echo e($loan->last_payment_date); ?> </td>
             </tr>
         </table>
     </div>
