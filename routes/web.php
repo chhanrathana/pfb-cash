@@ -21,6 +21,7 @@ use App\Http\Controllers\FinancialReports\AdminFeeRevenueController;
 use App\Http\Controllers\FinancialReports\DividendRevenueController;
 use App\Http\Controllers\FinancialReports\ExpenseController as FinancialReportsExpenseController;
 use App\Http\Controllers\FinancialReports\InterestRevenueController;
+use App\Http\Controllers\MasterData\CalendarController;
 use App\Http\Controllers\OperationReports\LoanReportController;
 use App\Http\Controllers\PaymentLogs\DeductionController as PaymentLogsDeductionController;
 use App\Http\Controllers\Payments\InterestController;
@@ -185,6 +186,18 @@ Route::middleware(['auth'])->group(function () {
         });
 
         Route::group(['prefix' => 'master-data', 'as' => 'master-data.'], function () {
+
+            Route::group(['prefix' => 'calendar', 'as' => 'calendar.'], function () {
+                Route::get('',          [CalendarController::class, 'index'])->name('index');
+                Route::get('download',  [CalendarController::class, 'download'])->name('download');
+                Route::post('',         [CalendarController::class, 'store'])->name('store');
+                Route::get('create',    [CalendarController::class, 'create'])->name('create');
+                Route::delete('{id}',   [CalendarController::class, 'destroy'])->name('destroy');
+                Route::patch('{id}',    [CalendarController::class, 'update'])->name('update');
+                Route::get('{id}',      [CalendarController::class, 'show'])->name('show');
+                Route::get('{id}/edit', [CalendarController::class, 'edit'])->name('edit');
+            });
+
             Route::group(['prefix' => 'deposit', 'as' => 'deposit.'], function () {
                 Route::get('',          [DepositController::class, 'index'])->name('index');
                 Route::post('',         [DepositController::class, 'store'])->name('store');
