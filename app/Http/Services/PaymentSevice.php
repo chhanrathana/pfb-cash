@@ -57,7 +57,7 @@ class PaymentSevice {
                     }else{
                         echo '<br/> calculateDate || '.$i .' '.$calculateDate;
                     }
-                    
+
                 }else{
                     $calculateDate = Carbon::parse(Carbon::createFromFormat('d/m/Y', $startPaymentDate)->format('Y-m-d'))->addDays($interest->interval);
                 }
@@ -129,7 +129,7 @@ class PaymentSevice {
             }else{
                 if ($loan->interest->code == InterestEnum::HALF_MONTHLY) {
                     $date = Carbon::parse(Carbon::createFromFormat('d/m/Y', $startPaymentDate)->format('Y-m-d'));
-                    if(Carbon::parse($date)->format('Y-m-d') < Carbon::parse($date)->addDays($interest->interval)->format('Y-m-11')){                        
+                    if(Carbon::parse($date)->format('Y-m-d') < Carbon::parse($date)->addDays($interest->interval)->format('Y-m-11')){
                         $calculateDate = Carbon::parse($date)->addDays($interest->interval)->format('Y-m-11');
                         $date_ = Carbon::parse($date);
                         $calculateDate_ = Carbon::parse($calculateDate);
@@ -148,9 +148,9 @@ class PaymentSevice {
                 }
                 $paymentDate = $this->getValidDate($calculateDate, $interest->interval);
                 $interval = $this->countDay($startPaymentDate, $paymentDate);
-                $commisonAmount = ($loan->principal_amount * ($interest->commission_rate / 100));                
+                $commisonAmount = ($loan->principal_amount * ($interest->commission_rate / 100));
 
-                
+
             }
             // echo '<br/>$paymentDate || '.$i.' >> calculateDate '.$calculateDate.' >> paymentDate '.$paymentDate.' >> date '.$date.' $diff '.$diff;
             $payment = new Payment();
@@ -177,7 +177,7 @@ class PaymentSevice {
             $pendingAmount = $payment->pending_amount - $payment->deduct_amount;
             $startPaymentDate = $payment->payment_date;
 
-             // adjust day of week to defualt day after change from holidy 
+             // adjust day of week to defualt day after change from holidy
              if($i > 0){
                 $startPaymentDateAdjust = Carbon::createFromFormat('d/m/Y', $startPaymentDate);
                 $startedPaymentDayWeek = Carbon::parse($startPaymentDateAdjust)->dayOfWeek;
@@ -186,7 +186,7 @@ class PaymentSevice {
                 }elseif($defaultDayOfWeek < $startedPaymentDayWeek){
                     $startPaymentDate = Carbon::parse($startPaymentDateAdjust)->subDays($startedPaymentDayWeek - $defaultDayOfWeek)->format('d/m/Y');
                 }
-            } 
+            }
 
             if ($loan->interest->code == InterestEnum::HALF_MONTHLY) {
                 if($calculateDate){
@@ -194,9 +194,9 @@ class PaymentSevice {
                 }else{
                     $startPaymentDate = $payment->payment_date;
                 }
-            }                                  
+            }
         }
-        
+
         return $payment;
     }
 
@@ -206,10 +206,9 @@ class PaymentSevice {
         $interest = InterestRate::find($loan->interest_rate_id);
         $pendingAmount = $loan->principal_amount;
         $paymentDate = Carbon::createFromFormat('d/m/Y', $loan->registration_date)->format('Y-m-d');
-
         // commision amount is fixed for all transaction
         $commisonAmount = ($loan->principal_amount * ($interest->commission_rate / 100));
-        $startPaymentDate = $loan->registration_date;
+        $startPaymentDate = $loan->registration_date; //  28/12/2022
 
         for ($i = 0; $i < $term; $i++) {
             $calculateDate = null;
@@ -219,11 +218,14 @@ class PaymentSevice {
                 $interval = $this->countDay($startPaymentDate, $paymentDate);
                 $commisonAmount =  ($loan->principal_amount * ($interest->commission_rate / 100 / $interest->interval));
             }else{
-                
+
                 $calculateDate = Carbon::parse(Carbon::createFromFormat('d/m/Y', $startPaymentDate)->format('Y-m-d'))->addDays($interest->interval);
+
                 $paymentDate = $this->getValidDate($calculateDate, $interest->interval);
+                $paymentDate = Carbon::parse(Carbon::createFromFormat('d/m/Y', $paymentDate)->format('Y-m-d'));
                 $interval = $this->countDay($startPaymentDate, $paymentDate);
-                $commisonAmount = ($loan->principal_amount * ($interest->commission_rate / 100));                
+
+                $commisonAmount = ($loan->principal_amount * ($interest->commission_rate / 100));
             }
 
             $payment = new Payment();
@@ -243,8 +245,9 @@ class PaymentSevice {
             $payment->save();
 
             $pendingAmount = $payment->pending_amount - $payment->deduct_amount;
-            $startPaymentDate = $payment->payment_date;           
+            $startPaymentDate = $payment->payment_date;
         }
+
         return $payment;
     }
 
@@ -256,7 +259,7 @@ class PaymentSevice {
                 $update->penalty_amount = $penaltyAmount;
                 $update->save();
              }
-        }        
+        }
     }
 
     public function updatePaymentDate($id, $paymentDate){
@@ -289,16 +292,18 @@ class PaymentSevice {
 
     private function countDay($startPaymentDate, $paymentDate)
     {
+
         $paymentDate = Carbon::parse(Carbon::parse($paymentDate)->format('Y-m-d'));
+
         $now = Carbon::parse(Carbon::createFromFormat('d/m/Y', $startPaymentDate)->format('Y-m-d')) ;
-        $days = $now->diff($paymentDate)->days;
-        return $days;
+
+        return $now->diff($paymentDate)->days;
     }
 
     // move to next or previous date if on weekend
     private function getValidDate($date, $interval){
         // $loans = Payment::where('loan_id', '5ac39ce0-ce2c-4703-9dad-8cc321de6e2f')->get();
-        
+
         $dateOfWeek = Carbon::parse($date)->dayOfWeek;
         // 0 Sunday 1 Mony = 1, 6 Saturday
         if ($dateOfWeek == '6') {
@@ -317,24 +322,24 @@ class PaymentSevice {
             $date = Carbon::parse($date)->addDay(1);
         }
 
-        $query = Calendar::where('date', '>=', $date);        
+        $query = Calendar::where('date', '>=', $date);
         $query->where([
             ['is_weekend', 0],
             ['is_holiday', 0]
         ]);
         $query->orderBy('date', 'asc');
-        $calendar = $query->first();       
-        if($calendar){          
-            return $calendar->date;   
-        }                
-        return $date;   
+        $calendar = $query->first();
+        if($calendar){
+            return $calendar->date;
+        }
+        return $date;
     }
 
     public function getInterestPayments($request, $paymeneDate, $paginate = true, $print = false)
     {
         $query = Payment::query();
         $query->whereHas('loan');
-                
+
         if($print){
             $query->select([
                 'loan_id',
@@ -352,11 +357,11 @@ class PaymentSevice {
                 DB::raw('sum(cross_amount) as cross_amount')]
             );
         }
-          
+
         $query->when($request->branch_id && ($request->branch_id <> 'all'), function ($q) use ($request) {
             $q->whereHas('loan', function ($q) use ($request) {
                 $q->where('branch_id', $request->branch_id);
-            });            
+            });
         });
 
         $query->where('status','<>', PaymentStatusEnum::FINISH);
@@ -401,11 +406,11 @@ class PaymentSevice {
 
         if($print){
             $query->groupBy(
-                'loan_id',         
+                'loan_id',
                 // 'status'
             );
         }
-        
+
         $query->orderBy('payment_date', 'asc');
         if ($paginate) {
             return $query->paginate(env('PAGINATION'));

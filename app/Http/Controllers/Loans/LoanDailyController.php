@@ -78,8 +78,8 @@ class LoanDailyController extends Controller
             $this->paymentSevice->updateInterestRate(InterestEnum::DAILY, $request->rate, $request->commission_rate);
 
             $loan = $this->loanService->createLoan($request, $client, InterestEnum::DAILY);
-            $this->paymentSevice->createPaymentDailyLoan($request->term, $loan);
 
+            $this->paymentSevice->createPaymentDailyLoan($request->term, $loan);
             $this->paymentSevice->updatePenaltyAmount($loan->payments, $loan->payments->count());
             DB::commit();
             return redirect()->back()->with('success', 'បញ្ចូលកម្ចីប្រចាំថ្ងៃជោគជ័យ! លេខកូដអតិថិជន៖'." $client->code");
