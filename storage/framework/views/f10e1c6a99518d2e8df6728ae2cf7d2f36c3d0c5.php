@@ -7,47 +7,47 @@
         <table style="width: 100%; font-size:10px" class="table-non-border td-border-non line-height-2">
             <tr>
                 <td>ឈ្មោះមេក្រុម</td>
-                <td><?php echo e($loan->client->code); ?></td>
+                <td><strong><?php echo e($loan->client->name_kh); ?></strong></td>
                 <td>សមាជិកទី០១</td>
-                <td> <?php echo e($loan->staff->name_kh??''); ?> </td>
+                <td><strong><?php echo e(($loan->members[0])->name_kh??'......'); ?></strong></td>
                 <td>សមាជិកទី០៣</td>
-                <td> <?php echo e($loan->staff->name_kh??''); ?> </td>
+                <td><strong><?php echo e(($loan->members[2])->name_kh??'......'); ?></strong></td>
             </tr>
             <tr>
                 <td>លេខទូរស័ព្ទ</td>
-                <td><?php echo e($loan->branch->code??''); ?></td>
+                <td><strong><?php echo e($loan->client->phone_number ?? '......'); ?></strong></td>
                 <td>សមាជិកទី០២</td>
-                <td>..........</td>
+                <td><strong><?php echo e(($loan->members[1])->name_kh??'......'); ?></strong></td>
                 <td>សមាជិកទី០៤</td>
-                <td> <?php echo e($loan->branch->name??''); ?></td>
+                <td><strong><?php echo e(($loan->members[3])->name_kh??'......'); ?></strong></td>
             </tr>
             <tr>
                 <td>លេខកូដកម្ចី</td>
-                <td><?php echo e($loan->code); ?></td>
+                <td><strong><?php echo e($loan->code); ?></strong></td>
                 <td>សមាជិកទី០៥</td>
-                <td><?php echo e($loan->code); ?></td>
+                <td><strong><?php echo e(($loan->members[4])->name_kh??'......'); ?></strong></td>
 
                 <td>អាសយដ្ឋាន</td>
-                <td><?php echo e($loan->staff->phone_number??''); ?> </td>
+                <td><strong><?php echo e($loan->client->address ??'......'); ?></strong></td>
             </tr>
         </table>
         <hr>
         <table style="width: 100%; font-size:10px" class="table-non-border td-border-non line-height-2">
             <tr>
                 <td>ចំនួនទឹកប្រាក់ខ្ចី</td>
-                <td><?php echo e($loan->client->name_kh); ?></td>
+                <td><strong><?php echo e(number_format($loan->principal_amount)); ?> ៛</strong></td>
                 <td >ទឹកប្រាក់ជាអក្សរ</td>
-                <td><?php echo e($loan->client->name_kh); ?></td>
+                <td><strong><?php echo e($loan -> principal_amount_as_word()); ?>រៀល</strong></td>
                 <td>ប្រភេទប្រាក់កម្ចី</td>
-                <td><?php echo e($loan->client->name_kh); ?></td>
+                <td><strong><?php echo e($loan-> type -> name_kh); ?></strong></td>
             </tr>
             <tr>
                 <td >រយះពេលខ្ចី</td>
-                <td><?php echo e($loan->client->name_kh); ?></td>
+                <td><strong><?php echo e($loan->term); ?> ដង</strong></td>
                 <td >កាលបរិច្ឆេទខ្ចី</td>
-                <td><?php echo e($loan->client->name_kh); ?></td>
+                <td><strong><?php echo e($loan->registration_date); ?></strong></td>
                 <td >កាលបរិច្ឆេទសងលើកដំបូង</td>
-                <td><?php echo e($loan->client->name_kh); ?></td>
+                <td><strong><?php echo e($loan->started_payment_date); ?></strong></td>
             </tr>
         </table>
     </div>
@@ -61,6 +61,7 @@
             <tr>
                 <th style="width: 5%; font-size: smaller; padding: 4px;">ល.រ</th>
                 <th colspan="2" style="width: 15%; font-size: smaller; padding: 4px;">កាលបរិច្ឆេទសងប្រាក់</th>
+                <th style="width: 10%; font-size: smaller; padding: 4px;"><?php echo e($loan -> client -> name_kh ?? '- - -'); ?></th>
                 <?php $__currentLoopData = $loan -> members; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $member): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <th style="width: 10%; font-size: smaller; padding: 4px;"><?php echo e($member -> name_kh ?? '- - -'); ?></th>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -72,10 +73,14 @@
                     <td style="font-size: smaller; padding: 4px" class="text-center text-nowrap"><?php echo e($loop->index + 1); ?></td>
                     <td style="font-size: smaller; padding: 4px" class="text-center" ><?php echo e($payment->payment_date??''); ?> </td>
                     <td style="font-size: smaller; padding: 4px" class="text-center" nowrap="nowrap"><?php echo e(convertDaytoKhmer(date('D',strtotime($payment->getRawOriginal('payment_date'))))); ?></td>
-                    <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap"></td>
-                    <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap"></td>
-                    <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap"></td>
-                    <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap"></td>
+                    <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap"><?php echo e(number_format($payment->total_amount/($loan -> totalMembers()))); ?></td>
+                    <?php for($i=1; $i<5; $i++): ?>
+                        <?php if($i > count($loan -> validMembers())): ?>
+                            <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap">0</td>
+                        <?php else: ?>
+                            <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap"><?php echo e(number_format($payment->total_amount/4)); ?></td>
+                        <?php endif; ?>
+                    <?php endfor; ?>
                     <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap"></td>
                 </tr>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
