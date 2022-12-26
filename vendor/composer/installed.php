@@ -1034,6 +1034,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'sethathay/number-to-khmer-words' => array(
+            'pretty_version' => 'v1.0',
+            'version' => '1.0.0.0',
+            'reference' => 'd8ed759fe9f8f8d4a95d862e9e8cac36021ff4b3',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../sethathay/number-to-khmer-words',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'swiftmailer/swiftmailer' => array(
             'pretty_version' => 'v6.2.7',
             'version' => '6.2.7.0',

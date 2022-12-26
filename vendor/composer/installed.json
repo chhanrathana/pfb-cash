@@ -5977,6 +5977,56 @@
             "install-path": "../setasign/fpdi"
         },
         {
+            "name": "sethathay/number-to-khmer-words",
+            "version": "v1.0",
+            "version_normalized": "1.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sethathay/number-to-khmer-words.git",
+                "reference": "d8ed759fe9f8f8d4a95d862e9e8cac36021ff4b3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sethathay/number-to-khmer-words/zipball/d8ed759fe9f8f8d4a95d862e9e8cac36021ff4b3",
+                "reference": "d8ed759fe9f8f8d4a95d862e9e8cac36021ff4b3",
+                "shasum": ""
+            },
+            "time": "2021-08-05T07:02:39+00:00",
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "SethaThay\\NumberToKhmerWords\\NumberToKhmerWordsServiceProvider"
+                    ],
+                    "aliases": {
+                        "NumberToKhmerWords": "SethaThay\\NumberToKhmerWords\\Facades\\NumberToKhmerWords"
+                    }
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "SethaThay\\NumberToKhmerWords\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SETHA THAY",
+                    "email": "sethathay@gmail.com"
+                }
+            ],
+            "description": "A laravel package to convert number to khmer words",
+            "support": {
+                "issues": "https://github.com/sethathay/number-to-khmer-words/issues",
+                "source": "https://github.com/sethathay/number-to-khmer-words/tree/v1.0"
+            },
+            "install-path": "../sethathay/number-to-khmer-words"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v6.2.7",
             "version_normalized": "6.2.7.0",
