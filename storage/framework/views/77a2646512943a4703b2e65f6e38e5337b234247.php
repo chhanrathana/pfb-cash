@@ -80,7 +80,7 @@
                     <td style="font-size: smaller; padding: 4px" class="text-center text-nowrap"><?php echo e($loop->index + 1); ?></td>
                     <td style="font-size: smaller; padding: 4px" class="text-center" ><?php echo e($payment->payment_date??''); ?> </td>
                     <td style="font-size: smaller; padding: 4px" class="text-center" nowrap="nowrap"><?php echo e(convertDaytoKhmer(date('D',strtotime($payment->getRawOriginal('payment_date'))))); ?></td>
-                    <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap"><?php echo e(number_format($payment->total_amount)); ?></td>
+                    <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap"><?php echo e(number_format(roundCurrency($payment->total_amount))); ?></td>
                     <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap"></td>
                 </tr>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
