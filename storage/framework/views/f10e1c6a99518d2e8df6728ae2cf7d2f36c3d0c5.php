@@ -82,7 +82,7 @@
                     <td style="font-size: smaller; padding: 4px" class="text-center text-nowrap"><?php echo e($loop->index + 1); ?></td>
                     <td style="font-size: smaller; padding: 4px" class="text-center" ><?php echo e($payment->payment_date??''); ?> </td>
                     <td style="font-size: smaller; padding: 4px" class="text-center" nowrap="nowrap"><?php echo e(convertDaytoKhmer(date('D',strtotime($payment->getRawOriginal('payment_date'))))); ?></td>
-                    <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap"><?php echo e(number_format($payment->total_amount/($loan -> totalMembers()))); ?></td>
+                    <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap"><?php echo e(''); ?></td>
                     <?php for($i=1; $i<5; $i++): ?>
                         <?php if($i > count($loan -> validMembers())): ?>
                             <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap">0</td>
