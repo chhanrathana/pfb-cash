@@ -82,12 +82,12 @@
                     <td style="font-size: smaller; padding: 4px" class="text-center text-nowrap">{{ $loop->index + 1 }}</td>
                     <td style="font-size: smaller; padding: 4px" class="text-center" >{{ $payment->payment_date??''}} </td>
                     <td style="font-size: smaller; padding: 4px" class="text-center" nowrap="nowrap">{{ convertDaytoKhmer(date('D',strtotime($payment->getRawOriginal('payment_date')))) }}</td>
-                    <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap">{{ number_format($payment->total_amount/($loan -> totalMembers())) }}</td>
+                    <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap">{{ number_format(roundCurrency($payment->total_amount/($loan -> totalMembers()))) }}</td>
                     @for($i=1; $i<5; $i++)
                         @if($i > count($loan -> validMembers()))
                             <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap">0</td>
                         @else
-                            <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap">{{ number_format($payment->total_amount/4) }}</td>
+                            <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap">{{  number_format(roundCurrency($payment->total_amount/($loan -> totalMembers()))) }}</td>
                         @endif
                     @endfor
                     <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap"></td>

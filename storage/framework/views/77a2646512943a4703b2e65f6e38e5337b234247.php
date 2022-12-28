@@ -3,7 +3,7 @@
     <h2 class="text-center heading-title-center">
          តារាងកាលវិភាគសងប្រាក់សងប្រាក់
     </h2>
-    
+
     <div class="row">
         <table style="width: 100%; font-size:10px; margin-top:20px" class="table-non-border td-border-non line-height-2">
             <tr>
@@ -61,11 +61,11 @@
             </tr>
         </table>
     </div>
-    
+
     <div class="text-right">
         <small class="print-date"><i>printed at <?php echo e(\Carbon\Carbon::now()); ?></i></small>
     </div>
-    
+
 
     <div class="report" id="report">
         <table class="th-color">
@@ -80,24 +80,24 @@
                     <td style="font-size: smaller; padding: 4px" class="text-center text-nowrap"><?php echo e($loop->index + 1); ?></td>
                     <td style="font-size: smaller; padding: 4px" class="text-center" ><?php echo e($payment->payment_date??''); ?> </td>
                     <td style="font-size: smaller; padding: 4px" class="text-center" nowrap="nowrap"><?php echo e(convertDaytoKhmer(date('D',strtotime($payment->getRawOriginal('payment_date'))))); ?></td>
-                    <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap"><?php echo e(number_format($payment->total_amount)); ?></td>                    
+                    <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap"><?php echo e(number_format($payment->total_amount)); ?></td>
                     <td style="font-size: smaller; padding: 4px" class="text-right text-nowrap"></td>
                 </tr>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-            
-        </table>                
-    </div>    
+
+        </table>
+    </div>
     <p style="text-indent: 10px; font-size:12px">ក្រោយពីបានពិនិត្យកិច្ចសន្យានិងតារាងបង់ប្រាក់ខាងលើ ខ្ញុំបាទ/នាងខ្ញុំបានយល់ព្រមបង់សងប្រាក់បងស្ថាប័នវិញទាំងប្រាក់ដើមនិងការប្រាក់ទៅតាមតារាងបង់ប្រាក់តាមការកំណត់ខាងលើជាកំហិត។</p>
 
-    <table style="width: 100%; font-size:10px" class="table-non-border td-border-non line-height-2">        
+    <table style="width: 100%; font-size:10px" class="table-non-border td-border-non line-height-2">
         <tr>
             <td>ហត្ថលេខាបុគ្គលិក</td>
             <td>ស្នាមមេដៃអ្នករួមធានា</td>
             <td>ស្នាមមេដៃអ្នកធានា</td>
             <td>ស្នាមមេដៃអ្នករួមខ្ចី</td>
-            <td>ស្នាមមេដៃអ្នកខ្ចី</td>            
+            <td>ស្នាមមេដៃអ្នកខ្ចី</td>
         </tr>
-    </table>    
+    </table>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.pdf-layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\Project\SDT\PFB CASH\Source Code\resources\views/loans/print-loan-individual.blade.php ENDPATH**/ ?>
