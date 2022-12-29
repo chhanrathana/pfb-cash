@@ -202,7 +202,7 @@ class PaymentSevice {
 
     public function createPaymentDailyLoan($term, $loan)
     {
-        $fixedAmount = ($loan->principal_amount / $term);
+        $fixedAmount = roundCurrency(ceil($loan->principal_amount / $term));
         $interest = InterestRate::find($loan->interest_rate_id);
         $pendingAmount = $loan->principal_amount;
         $paymentDate = Carbon::createFromFormat('d/m/Y', $loan->registration_date)->format('Y-m-d');
