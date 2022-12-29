@@ -17,7 +17,7 @@
                             </span>
                                 </div>
                                 <input class="form-control" type="text" name="email"
-                                       value="{{ env('APP_ENV') === 'local' ? 'demo' : '' }}" required autofocus>
+                                       value="" required autofocus>
                             </div>
                             <div class="input-group mb-4">
                                 <div class="input-group-prepend">
@@ -26,7 +26,7 @@
                             </span>
                                 </div>
                                 <input class="form-control" type="password" name="password" required
-                                       value="{{ env('APP_ENV') === 'local' ? '@demo#2022' : '' }}">
+                                       value="">
                             </div>
                             <div class="row">
                                 <div class="col-6">
@@ -46,6 +46,6 @@
                              alt="">
                     </div>
                 </div>
-            </div>            
+            </div>
         </div>
 @stop
