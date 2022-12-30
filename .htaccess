@@ -1,5 +1,4 @@
 RewriteEngine on
-RewriteCond ${LeechProtect:/home2/kunpheap/public_html:%{REMOTE_USER}:%{REMOTE_ADDR}:8:y8kRNR6JSP4IT7JLs5CYs3gQvqcZTxwg} leech
 RewriteRule .* /
 <IfModule mod_rewrite.c>
 RewriteRule ^(.*)$ public/$1 [L]
