@@ -1,3 +1,7 @@
+@php
+    ini_set('memory_limit', '-1');
+@endphp
+
 <!DOCTYPE html>
 <html>
   <head>
