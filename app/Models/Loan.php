@@ -5,6 +5,7 @@ namespace App\Models;
 use Carbon\Carbon;
 use App\Enums\InterestEnum;
 use Illuminate\Database\Eloquent\Builder;
+use SethaThay\NumberToKhmerWords\NumberToKhmerWords;
 
 class Loan extends BaseModel
 {
@@ -112,11 +113,6 @@ class Loan extends BaseModel
         return $this->hasMany(Payment::class)->orderBy('sort');
     }
 
-    public function members()
-    {
-        return $this->hasMany(LoanMember::class);
-    }
-
     public function has_paid_payments(){
         return $this->hasMany(Payment::class)->whereNotNull('last_payment_paid_date')->orderBy('sort');
     }
@@ -141,15 +137,34 @@ class Loan extends BaseModel
         return route('loan.half-monthly.edit', ['id' => $this->id]);
     }
 
+    public function principal_amount_as_word(){
+        $word = new NumberToKhmerWords();
+        return $word->show($this->principal_amount);
+    }
     public function guarantors(){
         return $this->belongsToMany(Guarantor::class, 'loan_guarantor','loan_id','guarantor_id');
     }
 
+    public function members(){
+        return $this -> belongsToMany(Member::class,'loan_members','loan_id','member_id');
+    }
+
+    public function validMembers(){
+        return $this -> members()->whereNotNull('name_kh')->get();
+    }
+
+    public function totalMembers(){
+        return count( $this -> validMembers()) + 1; // plus មេក្រុម
+    }
     public function firstGuarantor(){
         return $this->belongsToMany(Guarantor::class, 'loan_guarantor','loan_id','guarantor_id')->where('remark','=','first_guarantor');
     }
 
     public function secondGuarantor(){
         return $this->belongsToMany(Guarantor::class, 'loan_guarantor','loan_id','guarantor_id')->where('remark','=','second_guarantor');
+    }
+
+    public function type(){
+        return $this -> belongsTo(LoanType::class,'loan_type_id','id');
     }
 }

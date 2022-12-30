@@ -2,15 +2,13 @@
 @section('title', 'កែប្រែ-ប្រាក់កម្ចី')
 
 @section('content')
-    @include('includes.alert-info')
-
     <form action="{{ route('loan.daily.update',['id' => $loan->id ]) }}" method="POST">
         @csrf
         @method('PATCH')
         @include('includes.create-client')
         <input type="hidden" name="loan_id" value="{{ $loan->id }}">
         <div class="card">
-            <div class="card-header bg-custom"> <strong>ព័ត៌មានប្រាក់កម្ចីប្រចាំថ្ងៃ</strong></div>
+            <div class="card-header bg-custom"> <strong>ព័ត៌មានប្រាក់កម្ចីប្រចាំថ្ងៃ <span class="text-danger">*</span></strong></div>
             <div class="card-body">
                 <div class="row">
                     <div class="form-group col-sm-4">

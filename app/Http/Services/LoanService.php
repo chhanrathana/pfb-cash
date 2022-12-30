@@ -6,6 +6,8 @@ namespace App\Http\Services;
 use App\Models\Guarantor;
 use App\Models\Loan;
 use App\Enums\LoanStatusEnum;
+use App\Models\LoanMember;
+use App\Models\Member;
 use Carbon\Carbon;
 use App\Models\InterestRate;
 use Illuminate\Support\Facades\DB;
@@ -55,9 +57,12 @@ class LoanService
         $loan->status = LoanStatusEnum::PENDING;
         $loan->branch_id = $req->branch_id;
         $loan->staff_id = $req -> staff_id;
+        $loan->loan_type_id = $req -> loan_type;
         $loan->save();
         //guarantor first
         if ($req -> first_guarantor_name){
+            // delete first
+            $loan -> firstGuarantor ? $loan -> firstGuarantor() -> detach() : null;
             $clientDOB = $req -> first_guarantor_date_of_birth? Carbon::createFromFormat('d/m/Y', $req->first_guarantor_date_of_birth)->format('Y-m-d') : null;
             $firstId = Str::uuid();
             Guarantor::insert([
@@ -77,6 +82,8 @@ class LoanService
         }
         //guarantor second
         if ($req -> second_guarantor_name){
+            // delete
+            $loan -> secondGuarantor ? $loan -> secondGuarantor() -> detach() : null;
             $clientDOB = $req -> second_guarantor_date_of_birth? Carbon::createFromFormat('d/m/Y', $req->second_guarantor_date_of_birth)->format('Y-m-d') : null;
             $secondID = Str::uuid();
             Guarantor::insert([
@@ -95,7 +102,23 @@ class LoanService
                 'remark'        => 'second_guarantor'
             ]);
         }
-
+        // loan member
+        if(($req -> loan_type == "group")){
+            // create or update
+            $loan -> members ? $loan -> members() -> detach() : null;
+            foreach ($req -> member_name_kh as $key => $value){
+                // save member
+                //insert to loan_member
+                $member = new Member();
+                $member -> name_kh = $value;
+                $member -> name_en =$req->member_name_en[$key];
+                $member -> save();
+                DB::table('loan_members')->insert([
+                    'loan_id'       => $loan -> id,
+                    'member_id'     => $member -> id
+                ]);
+            }
+        }
         return $loan;
     }
 
@@ -146,9 +169,9 @@ class LoanService
             });
         }
 
-        $query->when($request->​client_code, function ($q) use ($request) {
+        $query->when($request->client_code, function ($q) use ($request) {
             $q->whereHas('client', function ($q) use ($request) {
-                $q->where('code', $request->​client_code);
+                $q->where('code', $request->client_code);
             });
         });
 

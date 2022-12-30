@@ -24,6 +24,7 @@ class DailyLoanRequest extends FormRequest
     public function rules()
     {
         return [
+            "type"  => "nullable",
             "loaner_name_kh" => "required|max:50",
             "loaner_name_en" => "required|max:50",
             "loaner_sex" => "required",

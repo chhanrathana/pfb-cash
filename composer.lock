@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "00edee04b3c5b7ee48b1882d2d1047da",
+    "content-hash": "f0bd8ce2156d8319e80db40eec9049cc",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -38,7 +38,10 @@
             "autoload": {
                 "psr-4": {
                     "Asm89\\Stack\\": "src/"
-                }
+                },
+                "files": [
+                    "app/Helpers/buth.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -3334,6 +3337,53 @@
                 }
             ],
             "time": "2021-02-11T11:37:01+00:00"
+        },
+        {
+            "name": "sethathay/number-to-khmer-words",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sethathay/number-to-khmer-words.git",
+                "reference": "d8ed759fe9f8f8d4a95d862e9e8cac36021ff4b3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sethathay/number-to-khmer-words/zipball/d8ed759fe9f8f8d4a95d862e9e8cac36021ff4b3",
+                "reference": "d8ed759fe9f8f8d4a95d862e9e8cac36021ff4b3",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "SethaThay\\NumberToKhmerWords\\NumberToKhmerWordsServiceProvider"
+                    ],
+                    "aliases": {
+                        "NumberToKhmerWords": "SethaThay\\NumberToKhmerWords\\Facades\\NumberToKhmerWords"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "SethaThay\\NumberToKhmerWords\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SETHA THAY",
+                    "email": "sethathay@gmail.com"
+                }
+            ],
+            "description": "A laravel package to convert number to khmer words",
+            "support": {
+                "issues": "https://github.com/sethathay/number-to-khmer-words/issues",
+                "source": "https://github.com/sethathay/number-to-khmer-words/tree/v1.0"
+            },
+            "time": "2021-08-05T07:02:39+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -8303,5 +8353,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.3.0"
 }

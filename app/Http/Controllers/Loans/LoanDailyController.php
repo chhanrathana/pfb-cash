@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Loans;
 
+use App\Models\LoanType;
 use Illuminate\Http\Request;
 use App\Enums\InterestEnum;
 use App\Http\Requests\DailyLoanRequest;
@@ -36,7 +37,7 @@ class LoanDailyController extends Controller
             })
             ->orderBy('created_at', 'desc')->first();
         }
-
+        $loanTypes = LoanType::all();
         return view('loans.daily.create', [
             'interest' => $this->getInterestType(InterestEnum::DAILY),
             'staffs' => $this->staffService->getActiveStaffs(),
@@ -44,6 +45,7 @@ class LoanDailyController extends Controller
             'client' => $client,
 
             'loan' => $loan,
+            'loanTypes' => $loanTypes,
             'first_guarantor' => null,
             'second_guarantor' => null,
             'districts' => $districts,
@@ -57,6 +59,12 @@ class LoanDailyController extends Controller
 
     public function store(DailyLoanRequest $request)
     {
+        if ($request->loan_type == "group"){
+            $request -> validate([
+               'member_name_kh' => 'required|array',
+               'member_name_en' => 'required|array'
+            ]);
+        }
         DB::beginTransaction();
         try {
             $exist = $this->clientService->checkExistClient($request);
@@ -70,8 +78,8 @@ class LoanDailyController extends Controller
             $this->paymentSevice->updateInterestRate(InterestEnum::DAILY, $request->rate, $request->commission_rate);
 
             $loan = $this->loanService->createLoan($request, $client, InterestEnum::DAILY);
-            $this->paymentSevice->createPaymentDailyLoan($request->term, $loan);
 
+            $this->paymentSevice->createPaymentDailyLoan($request->term, $loan);
             $this->paymentSevice->updatePenaltyAmount($loan->payments, $loan->payments->count());
             DB::commit();
             return redirect()->back()->with('success', 'បញ្ចូលកម្ចីប្រចាំថ្ងៃជោគជ័យ! លេខកូដអតិថិជន៖'." $client->code");
@@ -89,11 +97,12 @@ class LoanDailyController extends Controller
         $districts = District::where('province_id', $client->village->commune->district->province->id)->get();
         $communes = Commune::where('district_id', $client->village->commune->district->id)->get();
         $villages = Village::where('commune_id', $client->village->commune->id)->get();
-
+        $loanTypes = LoanType::all();
         return view('loans.daily.edit', [
             'interest' => $this->getInterestType(InterestEnum::DAILY),
             'staffs' => $this->staffService->getActiveStaffs(),
             'loan' => $loan,
+            'loanTypes' => $loanTypes,
             'first_guarantor' => $loan->firstGuarantor->first(),
             'second_guarantor' => $loan->secondGuarantor->first(),
             'client' => $client,
