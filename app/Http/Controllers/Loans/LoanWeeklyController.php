@@ -14,6 +14,7 @@ use App\Models\Village;
 use App\Models\Commune;
 use App\Models\Loan;
 use App\Models\Client;
+use App\Models\LoanType;
 
 class LoanWeeklyController extends Controller
 {
@@ -37,12 +38,14 @@ class LoanWeeklyController extends Controller
             })
             ->orderBy('created_at', 'desc')->first();
         }        
+        $loanTypes = LoanType::all();
         return view('loans.weekly.create', [
             'interest' => $this->getInterestType(InterestEnum::WEEKLY),
             'staffs' => $this->staffService->getActiveStaffs(),
             'clients' => $this->clientService->getClients($reqeust),
             'client' => $client,
             'loan' => $loan,
+            'loanTypes' => $loanTypes,
             'first_guarantor' => null,
             'second_guarantor' => null,
             'districts' => $districts,
