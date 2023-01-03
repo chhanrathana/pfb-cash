@@ -1,7 +1,7 @@
 @extends('layouts.pdf-layout')
 @section('html')
     <h2 class="text-center heading-title-center">
-         តារាងកាលវិភាគសងប្រាក់សងប្រាក់
+         តារាងកាលវិភាគសងប្រាក់
     </h2>
 
     <div class="row">
