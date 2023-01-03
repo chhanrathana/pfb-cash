@@ -5,16 +5,16 @@
         តារាងប្រាក់កម្ចី
     </div>
 
-    
+
     <div class="report repay" id="report">
         <br/>
-        <h3 class="text-font-bold">ភ្នាក់ងារ ៖ <strong>{{ $defaultStaff->name_kh }}</strong></h3>
+        <h3 class="text-font-bold">ភ្នាក់ងារ ៖ <strong>{{ $defaultStaff->name_kh }}</strong></h3>
         <div class="text-right">
-            <small class="print-date"><i>printed at {{ \Carbon\Carbon::now() }}</i></small>   
+            <small class="print-date"><i>printed at {{ \Carbon\Carbon::now() }}</i></small>
         </div>
         <div class="table-responsive">
             <table class="table table-bordered table-striped table-hover" style="font-size: 8px">
-                <thead>                    
+                <thead>
 
                     <tr style="background-color: rgb(236, 236, 236);">
                         <th style="width: 28px;" class="text-center">ល.រ</th>
@@ -24,13 +24,13 @@
                         <th style="width: 35px;" class="text-center text-nowrap">កូដ</th>
                         <th style="width: 100px;" class="text-center text-nowrap">អតិថិជន</th>
                         <th style="width: 70px;" class="text-center text-nowrap">ទំនាក់ទំនង</th>
-                        <th style="width: 25px;" class="text-center text-nowrap">យឺត</th>                        
+                        <th style="width: 25px;" class="text-center text-nowrap">យឺត</th>
                         <th style="width: 75px;" class="text-center text-nowrap">ដើមនៅសល់</th>
                         <th style="width: 50px;" class="text-center text-nowrap">ត្រូវបង់</th>
                         <th style="width: 50px;" class="text-center text-nowrap">បានបង់</th>
                         <th style="width: 45px;" class="text-center text-nowrap">បង់ទី</th>
                         <th style="width: 180px;" class="text-center text-nowrap">អាសយដ្ឋាន</th>
-                    </tr> 
+                    </tr>
                 </thead>
                 <tbody>
                 @php
@@ -45,7 +45,7 @@
                         $totalPending +=  $payment->loan->pending_amount??0;
                         $totalAmount +=  $payment->total_amount;
                         $totalPaidAmount +=$payment->total_paid_amount;
-                        $unPaidAmount = ($payment->total_amount - $payment->total_paid_amount);                        
+                        $unPaidAmount = ($payment->total_amount - $payment->total_paid_amount);
                         $totalUnPaidAmount += $unPaidAmount;
                     @endphp
                     <tr>
