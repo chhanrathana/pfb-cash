@@ -33,7 +33,7 @@ class User extends Authenticatable
         'branch_id',
         'user_type_id'
     ];
- 
+
     protected $hidden = [
         'password',
         'remember_token',
@@ -42,13 +42,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    
+
     public function hasMenu(){
         return $this->hasOne(UserHasMenu::class,'user_id','id');
     }
 
     public function branch(){
-        
+
         return $this->belongsTo(Branch::class);
     }
 
@@ -58,5 +58,9 @@ class User extends Authenticatable
 
     public function getAvatarAttribute($value){
         return $value??'/avatar/avatar.png';
+    }
+
+    public function getBranchNameAttribute(){
+        return $this -> branch ? $this -> branch->name : "គ្មាន";
     }
 }

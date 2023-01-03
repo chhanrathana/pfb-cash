@@ -4,7 +4,6 @@ $(document).ready(function () {
   getAddress("#commune_id", "village");
 
   function getAddress (id, address) {
-      console.log(id);
       $(id).change(function (event) {
           if ($(this).val() == '') {
               return;

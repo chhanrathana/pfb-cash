@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '8fb07e56fada4ee3eb26fabc773e2ce22e843b40',
+        'reference' => 'a05fc5ea548018011394b077582a2ca3d85dc312',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -415,7 +415,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '8fb07e56fada4ee3eb26fabc773e2ce22e843b40',
+            'reference' => 'a05fc5ea548018011394b077582a2ca3d85dc312',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -429,6 +429,15 @@
             'install_path' => __DIR__ . '/../laravel/sail',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'laravel/slack-notification-channel' => array(
+            'pretty_version' => 'v2.4.0',
+            'version' => '2.4.0.0',
+            'reference' => '060617a31562c88656c95c5971a36989122d4b53',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laravel/slack-notification-channel',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'laravel/tinker' => array(
             'pretty_version' => 'v2.6.1',

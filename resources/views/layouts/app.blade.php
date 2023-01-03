@@ -58,6 +58,9 @@
         {{-- @include('layouts.fixedtop') --}}
 
         <ul class="c-header-nav ml-auto mr-4">
+            <div class="d-sm-down-none">
+                {{ auth()->user()->name }} (សាខា: {{auth()->user()->branchName}})
+            </div>
             <li class="c-header-nav-item dropdown">
                 <a class="c-header-nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                    aria-expanded="false">
@@ -84,7 +87,7 @@
         <footer class="c-footer">
             <div class="text-center">
                 <p>Developed by <a href="http://sisinformatics.com" target="_blank">SIS Informatics</p>
-            </div>            
+            </div>
         </footer>
     </div>
 </div>
