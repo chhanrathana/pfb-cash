@@ -26,7 +26,6 @@ class LoanDailyController extends Controller
         $villages = null;
         $loan = null;
         $client = $this->clientService->getClientById($reqeust->selected);
-
         if ($client) {
             $districts = District::where('province_id', $client->village->commune->district->province->id)->get();
             $communes = Commune::where('district_id', $client->village->commune->district->id)->get();
@@ -43,7 +42,6 @@ class LoanDailyController extends Controller
             'staffs' => $this->staffService->getActiveStaffs(),
             'clients' => $this->clientService->getClients($reqeust),
             'client' => $client,
-
             'loan' => $loan,
             'loanTypes' => $loanTypes,
             'first_guarantor' => null,

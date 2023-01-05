@@ -8,7 +8,7 @@
         <table style="width: 100%; font-size:10px; margin-top:20px" class="table-non-border td-border-non line-height-2">
             <tr>
                 <td>កូដអតិថិជន</td>
-                <td>{{$loan->client->code}}</td>
+                <td>{{$loan->client ? $loan -> client ->code : null}}</td>
                 <td>ភ្នាក់ងារ</td>
                 <td> {{$loan->staff->name_kh??''}} </td>
             </tr>
@@ -27,28 +27,28 @@
             </tr>
             <tr>
                 <td >ឈ្មោះអតិថិជន</td>
-                <td>{{$loan->client->name_kh}}</td>
+                <td>{{$loan->client ? $loan->client->name_kh : null}}</td>
 
                 <td>ប្រភេទកម្ចី</td>
                 <td>{{$loan->interest->name??''}} </td>
             </tr>
             <tr>
                 <td>អាស័យដ្ឋាន</td>
-                <td>{{$loan->client->address}}</td>
+                <td>{{$loan->client ? $loan->client->address:null}}</td>
 
                 <td>ចំនួនកាលវិភាគ</td>
                 <td>{{count($loan->payments)}} </td>
             </tr>
             <tr>
                 <td>លេខទំនាក់ទំនង</td>
-                <td>{{$loan->client->phone_number}}</td>
+                <td>{{$loan->client ? $loan->client->phone_number : null}}</td>
 
                 <td>ចំនួនទឹកប្រាក់</td>
                 <td>{{ number_format($loan->principal_amount) }}</td>
             </tr>
             <tr>
-                <td>ជំហាន</td>
-                <td>{{$loan->client->loans->count()}}</td>
+                <td>វគ្គ</td>
+                <td>{{$loan->client ? $loan->client ->loans->count():null}}</td>
                 <td>រូបិយប័ណ្ណ</td>
                 <td>រៀល </td>
             </tr>

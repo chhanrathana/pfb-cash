@@ -34,7 +34,7 @@ class UsersTableSeeder extends Seeder
     //        'updated_at' => Carbon::now(),
     //        ]]
     //    );
-       
+
     //     User::insert([
     //         'id' => Str::uuid(),
     //         'name' => 'demo',
@@ -49,7 +49,7 @@ class UsersTableSeeder extends Seeder
         $userTypes = getBackupData('user_types');
         $this->storeUserTypes($userTypes);
         // users
-        $users = getBackupData('users');        
+        $users = getBackupData('users');
         $this->storeUser($users);
 
         $this->storeUrls();
@@ -66,11 +66,11 @@ class UsersTableSeeder extends Seeder
                 'is_admin' => $item['is_admin'],
                 'name' => $item['name'],
                 'is_admin' => $item['is_admin'],
-                
+
                 'created_at' => $item['created_at'],
                 'updated_at' => $item['updated_at'],
                 // 'deleted_at' => $item['deleted_at'],
-            ];          
+            ];
         }
         $chunks = array_chunk($data, 1000);
         foreach ($chunks as $chunk) {
@@ -88,13 +88,13 @@ class UsersTableSeeder extends Seeder
                 'is_admin' => $item['is_admin'],
                 'user_type_id' => $item['user_type_id'],
                 'email_verified_at' => $item['email_verified_at'],
-                'password' => $item['password'],                
+                'password' => $item['password'],
                 'branch_id' => $item['branch_id'],
 
                 'created_at' => $item['created_at'],
                 'updated_at' => $item['updated_at'],
                 'deleted_at' => $item['deleted_at'],
-            ];          
+            ];
         }
         $chunks = array_chunk($data, 1000);
         foreach ($chunks as $chunk) {
@@ -104,7 +104,7 @@ class UsersTableSeeder extends Seeder
 
     private function storeUrls(){
         $files = json_decode(file_get_contents(base_path('database/seeders/Data/urls.json')) , true );
-        $data               = [];        
+        $data               = [];
         foreach ( $files['RECORDS'] as $file ){
             $data [] = [
                 'id' => $file['id'],
