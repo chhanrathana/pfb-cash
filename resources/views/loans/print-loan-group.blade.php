@@ -79,9 +79,10 @@
             <tr>
                 <th style="width: 5%; font-size: smaller; padding: 4px;">ល.រ</th>
                 <th colspan="2" style="width: 15%; font-size: smaller; padding: 4px;">កាលបរិច្ឆេទសងប្រាក់</th>
-                <th style="width: 10%; font-size: smaller; padding: 4px;">{{ $loan -> client -> name_kh ?? '- - -' }}</th>
+                <th style="width: 10%; font-size: smaller; padding: 4px;">{{ $loan -> client -> name_kh ?? '- - -' }} <br/>
+                    {{ number_format(($loan -> principal_amount)/$loan -> totalMembers()) }}</th>
                 @foreach($loan -> members as $member)
-                    <th style="width: 10%; font-size: smaller; padding: 4px;">{{ $member -> name_kh ?? '- - -' }}</th>
+                    <th style="width: 10%; font-size: smaller; padding: 4px;">{{ $member -> name_kh ?? '- - -' }} <br/> {{ $member -> name_kh ? number_format(($loan -> principal_amount)/$loan -> totalMembers()) : '' }}</th>
                 @endforeach
                 <th style="width: 10%; font-size: smaller; padding: 4px;">សម្គាល់ផ្សេងៗ</th>
             </tr>
