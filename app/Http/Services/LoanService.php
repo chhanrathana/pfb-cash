@@ -18,10 +18,7 @@ class LoanService
 
     private function generateLoanCode()
     {
-
-       $count = DB::table('loans')
-//       ->where('branch_id', auth()->user()->branch_id)
-       ->count();
+        $count= DB::table('loans')->max('code');
         $code = (1 + $count);
         return str_pad($code, 5, '0', STR_PAD_LEFT);
     }
