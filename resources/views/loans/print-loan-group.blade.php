@@ -59,13 +59,15 @@
                 <td>ថ្ងៃផុតកំណត់</td>
                 <td>{{$loan->last_payment_date}} </td>
             </tr>
+        </table>
+        <hr>
+        <table style="width: 100%; font-size:10px;"
+               class="table-non-border td-border-non line-height-2">
             <tr>
-                <td>សមាជិក</td>
-                <td colspan="3">
-                    @foreach($loan -> validMembers() as $key => $item)
-                        {{ $item -> name_kh }}{{ $loop->last ? '' : ',' }}
-                    @endforeach
-                </td>
+                <td>សមាជិកទី១ ៖ {{ $loan -> members[0]->name_kh ?? '0' }}</td>
+                <td>សមាជិកទី២ ៖ {{ $loan -> members[1]->name_kh ?? '0' }}</td>
+                <td>សមាជិកទី៣ ៖ {{ $loan -> members[2]->name_kh ?? '0' }}</td>
+                <td>សមាជិកទី៤ ៖ {{ $loan -> members[3]->name_kh ?? '0' }}</td>
             </tr>
         </table>
     </div>
