@@ -174,7 +174,8 @@ class LoanService
 
         // $query->orderByRaw("FIELD(status,'pending') desc");
 
-        $query->orderBy('registration_date', 'desc');
+        $query->orderByDesc('created_at');
+        // $query->orderBy('registration_date', 'desc');
         if ($paginate) {
             return $query->paginate(env('PAGINATION'));
         }
