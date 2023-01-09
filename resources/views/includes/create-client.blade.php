@@ -6,10 +6,10 @@
                 @foreach($loanTypes as $type)
                     <div class="form-check mt-3">
                         @if($loan)
-                            <input onclick="location.href=`/loan/daily/create?type={{$type->id}}`" class="form-check-input" type="radio" name="loan_type" id="{{ $type -> id }}"
+                            <input onclick="location.href=`{{ request()->url()}}?type={{$type->id}}`" class="form-check-input" type="radio" name="loan_type" id="{{ $type -> id }}"
                                    value="{{ $type -> id }}" {{ $loan -> loan_type_id == $type -> id ? 'checked' : '' }}>
                         @else
-                            <input onclick="location.href=`/loan/daily/create?type={{$type->id}}`" class="form-check-input" type="radio" name="loan_type" id="{{ $type -> id }}"
+                            <input onclick="location.href=`{{  request()->url() }}?type={{$type->id}}`" class="form-check-input" type="radio" name="loan_type" id="{{ $type -> id }}"
                                    value="{{ $type -> id }}" {{ request('type') == $type -> id ? 'checked' : '' }}>
                         @endif
                         <label class="form-check-label cursor-pointer {{ request('type') == $type -> id ? 'text-primary' : '' }}"
