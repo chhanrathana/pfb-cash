@@ -1,3 +1,13 @@
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <div class="card">
     <div class="card-header bg-custom"><strong>ជ្រើសរើសប្រភេទកម្ចី <span class="text-danger">*</span></strong></div>
     <div class="card-body">
@@ -6,15 +16,15 @@
                 @foreach($loanTypes as $type)
                     <div class="form-check mt-3">
                         @if($loan)
-                            <input onclick="location.href=`{{ request()->url()}}?type={{$type->id}}`" class="form-check-input" type="radio" name="loan_type" id="{{ $type -> id }}"
-                                   value="{{ $type -> id }}" {{ $loan -> loan_type_id == $type -> id ? 'checked' : '' }}>
+                            <input onclick="location.href=`{{ request()->url() ?? ''}}?type={{$type->id ?? ''}}`" class="form-check-input" type="radio" name="loan_type" id="{{ $type -> id ?? '' }}"
+                                   value="{{ $type -> id ?? ''}}" {{ $loan -> loan_type_id == $type -> id ? 'checked' : '' }}>
                         @else
-                            <input onclick="location.href=`{{  request()->url() }}?type={{$type->id}}`" class="form-check-input" type="radio" name="loan_type" id="{{ $type -> id }}"
-                                   value="{{ $type -> id }}" {{ request('type') == $type -> id ? 'checked' : '' }}>
+                            <input onclick="location.href=`{{  request()->url() ?? '' }}?type={{$type->id ?? ''}}`" class="form-check-input" type="radio" name="loan_type" id="{{ $type -> id ?? ''}}"
+                                   value="{{ $type -> id ?? ''}}" {{ request('type') == $type -> id ? 'checked' : '' }}>
                         @endif
                         <label class="form-check-label cursor-pointer {{ request('type') == $type -> id ? 'text-primary' : '' }}"
-                               for="{{ $type -> id }}">
-                            {{ $type -> name_kh }} / {{ $type -> name_en }}
+                               for="{{ $type -> id ?? ''}}">
+                            {{ $type -> name_kh ?? ''}} / {{ $type -> name_en ?? ''}}
                         </label>
                     </div>
                 @endforeach
@@ -49,7 +59,7 @@
                         placeholder="YIN BUNNA"
                         value="{{ $client->name_en??old('loaner_name_en') }}"
                         maxlength="50">
-                <div class="invalid-feedback">{{ $errors->first('loaner_name_en') }}</div>
+                <div class="invalid-feedback">{{ $errors->first('loaner_name_en') ?? '' }}</div>
             </div>
             <div class="form-group col-sm-4">
                 <label>ភេទ <span class="text-danger">*</span></label>
@@ -58,13 +68,13 @@
                     <option value="" selected>[-- ជ្រើសរើស --]</option>
                     @foreach ($sexes as $sex)
                         @if ($client)
-                            <option value="{{ $sex->id }}" {{ $client->sex == $sex->id ? 'selected' :  '' }} >{{ $sex->name }}</option>
+                            <option value="{{ $sex->id ?? ''}}" {{ $client->sex == $sex->id ? 'selected' :  '' }} >{{ $sex->name ?? ''}}</option>
                         @else
-                            <option value="{{ $sex->id }}" {{  old('sex') == $sex->id ? 'selected' :  '' }} >{{ $sex->name }}</option>
+                            <option value="{{ $sex->id ?? ''}}" {{  old('sex') == $sex->id ? 'selected' :  '' }} >{{ $sex->name ?? ''}}</option>
                         @endif
                     @endforeach
                 </select>
-                <div class="invalid-feedback">{{ $errors->first('loaner_sex') }}</div>
+                <div class="invalid-feedback">{{ $errors->first('loaner_sex') ?? ''}}</div>
             </div>
 
             <div class="form-group col-sm-4">
@@ -80,7 +90,7 @@
                         placeholder="ថ្ងៃ/ខែ/ឆ្នាំ"
                         value="{{ $client->date_of_birth??old('loaner_date_of_birth') }}"
                 >
-                <div class="invalid-feedback">{{ $errors->first('loaner_date_of_birth') }}</div>
+                <div class="invalid-feedback">{{ $errors->first('loaner_date_of_birth') ?? ''}}</div>
             </div>
             <div class="form-group col-sm-4">
                 <label for="phone_number">លេខទំនាក់ទំនង <span class="text-danger">*</span></label>
@@ -92,7 +102,7 @@
                         value="{{ $client->phone_number??old('loaner_phone_number') }}"
                         maxlength="50"
                 >
-                <div class="invalid-feedback">{{ $errors->first('loaner_phone_number') }}</div>
+                <div class="invalid-feedback">{{ $errors->first('loaner_phone_number') ?? '' }}</div>
             </div>
             <div class="form-group col-sm-4">
                 <label>ឯកសារសម្គាល់ខ្លួន <span class="text-danger">*</span></label>
@@ -101,13 +111,13 @@
                     <option value="" selected disabled>[-- ជ្រើសរើស --]</option>
                     @foreach ($documents as $document)
                         @if($client)
-                            <option value="{{ $document->id }}" {{ $client -> document_type_id == $document->id ? 'selected' :  '' }}>{{ $document->name }}</option>
+                            <option value="{{ $document->id ??'' }}" {{ $client -> document_type_id == $document->id ? 'selected' :  '' }}>{{ $document->name }}</option>
                         @else
-                            <option value="{{ $document->id }}" {{ old('loaner_document_type') == $document->id ? 'selected' :  '' }}>{{ $document->name }}</option>
+                            <option value="{{ $document->id ??'' }}" {{ old('loaner_document_type') == $document->id ? 'selected' :  '' }}>{{ $document->name }}</option>
                         @endif
                     @endforeach
                 </select>
-                <div class="invalid-feedback">{{ $errors->first('loaner_document_type') }}</div>
+                <div class="invalid-feedback">{{ $errors->first('loaner_document_type') ??''}}</div>
             </div>
             <div class="form-group col-sm-4">
                 <label for="input_document_number_1" id="document_number_title_1">លេខសំគាល់ឯកសារ <span
@@ -118,10 +128,10 @@
                         id="input_document_number_1"
                         type="text"
                         placeholder="សូមជ្រើសរើសប្រភេទឯកសារសម្គាល់ខ្លួនមុនសិន"
-                        value="{{ $client -> document_number ?? old('loaner_document_number') }}"
+                        value="{{ $client -> document_number ?? old('loaner_document_number') ?? ''}}"
                         maxlength="50"
                 >
-                <div class="invalid-feedback">{{ $errors->first('loaner_document_number') }}</div>
+                <div class="invalid-feedback">{{ $errors->first('loaner_document_number') ?? '' }}</div>
             </div>
             <div class="form-group col-sm-4">
                 <label>ខេត្ត <span class="text-danger">*</span></label>
@@ -136,7 +146,7 @@
                         @endif
                     @endforeach
                 </select>
-                <div class="invalid-feedback">{{ $errors->first('loaner_province_id') }}</div>
+                <div class="invalid-feedback">{{ $errors->first('loaner_province_id') ?? '' }}</div>
             </div>
 
             <div class="form-group col-sm-4">
@@ -146,11 +156,11 @@
                     <option value="" selected>[-- ជ្រើសរើស --]</option>
                     @if ($client)
                         @foreach ($districts as $district)
-                            <option value="{{ $district->id }}" {{ $client->village->commune->district->id == $district->id ? 'selected' :  '' }}>{{ $district->name_kh }}</option>
+                            <option value="{{ $district->id ?? '' }}" {{ $client->village->commune->district->id == $district->id ? 'selected' :  '' }}>{{ $district->name_kh ?? '' }}</option>
                         @endforeach
                     @endif
                 </select>
-                <div class="invalid-feedback">{{ $errors->first('district_id') }}</div>
+                <div class="invalid-feedback">{{ $errors->first('district_id') ?? '' }}</div>
             </div>
             <div class="form-group col-sm-4">
                 <label>ឃុំ <span class="text-danger">*</span></label>
@@ -159,12 +169,12 @@
                     <option value="" selected>[-- ជ្រើសរើស --]</option>
                     @if ($client)
                         @foreach ($communes as $commune)
-                            <option value="{{ $commune->id }}" {{ $client->village->commune->id == $commune->id ? 'selected' :  '' }}>{{ $commune->name_kh }}</option>
+                            <option value="{{ $commune->id ?? ''}}" {{ $client->village->commune->id == $commune->id ? 'selected' :  '' }}>{{ $commune->name_kh ?? '' }}</option>
                         @endforeach
                     @endif
 
                 </select>
-                <div class="invalid-feedback">{{ $errors->first('commune_id') }}</div>
+                <div class="invalid-feedback">{{ $errors->first('commune_id') ?? '' }}</div>
             </div>
             <div class="form-group col-sm-4">
                 <label>ភូមិ <span class="text-danger">*</span></label>
@@ -173,12 +183,12 @@
                     <option value="" selected>[-- ជ្រើសរើស --]</option>
                     @if ($client)
                         @foreach ($villages as $village)
-                            <option value="{{ $village->id }}" {{ $client->village->id == $village->id ? 'selected' :  '' }}>{{ $village->name_kh }}</option>
+                            <option value="{{ $village->id ?? ''}}" {{ $client->village->id == $village->id ? 'selected' :  '' }}>{{ $village->name_kh ?? ''}}</option>
                         @endforeach
                     @endif
 
                 </select>
-                <div class="invalid-feedback">{{ $errors->first('village_id') }}</div>
+                <div class="invalid-feedback">{{ $errors->first('village_id') ?? ''}}</div>
             </div>
         </div>
     </div>
@@ -228,26 +238,28 @@
                                     <span class="text-danger">*</span>
                                 @endif</label>
                             <input
-                                    class="form-control {{ $errors->first('member_name_kh') ? 'is-invalid':'' }}"
+                                    class="form-control"
+{{--                                    class="form-control {{ $errors->first('member_name_kh[]') ? 'is-invalid':'' }}"--}}
                                     name="member_name_kh[]"
                                     type="text"
                                     placeholder=""
-                                    value="{{ $client->name_kh??old('member_name_kh') }}"
+                                    value="{{ $client->name_kh??'' }}"
                                     maxlength="50">
-                            <div class="invalid-feedback">{{ $errors->first('member_name_kh') }}</div>
+{{--                            <div class="invalid-feedback">{{ $errors->first('member_name_kh[]') }}</div>--}}
                         </div>
                         <div class="form-group col-sm-6">
                             <label>សមាជិកទី {{$i}} -ឈ្មោះជាឡាតាំង @if($i==1)
                                     <span class="text-danger">*</span>
                                 @endif</label>
                             <input
-                                    class="form-control {{ $errors->first('member_name_en') ? 'is-invalid':'' }}"
+                                    class="form-control"
+{{--                                    class="form-control {{ $errors->first('member_name_en') ? 'is-invalid':'' }}"--}}
                                     name="member_name_en[]"
                                     type="text"
                                     placeholder=""
-                                    value="{{ $client->name_kh??old('member_name_en') }}"
+                                    value="{{ $client->name_kh??'' }}"
                                     maxlength="50">
-                            <div class="invalid-feedback">{{ $errors->first('member_name_en') }}</div>
+{{--                            <div class="invalid-feedback">{{ $errors->first('member_name_en') }}</div>--}}
                         </div>
                     </div>
                 @endfor
@@ -284,7 +296,7 @@
                         @endif
                     @endforeach
                 </select>
-                <div class="invalid-feedback">{{ $errors->first('first_guarantor_sex') }}</div>
+                <div class="invalid-feedback">{{ $errors->first('first_guarantor_sex') ?? '' }}</div>
             </div>
 
             <div class="form-group col-sm-4">
@@ -298,9 +310,9 @@
                         data-val="true"
                         data-val-required="Required"
                         placeholder="ថ្ងៃ/ខែ/ឆ្នាំ"
-                        value="{{ $first_guarantor->date_of_birth??old('first_guarantor_date_of_birth') }}"
+                        value="{{ $first_guarantor->date_of_birth??old('first_guarantor_date_of_birth') ?? '' }}"
                 >
-                <div class="invalid-feedback">{{ $errors->first('first_guarantor_date_of_birth') }}</div>
+                <div class="invalid-feedback">{{ $errors->first('first_guarantor_date_of_birth') ?? ''}}</div>
             </div>
             <div class="form-group col-sm-4">
                 <label for="phone_number">លេខទំនាក់ទំនង</label>
@@ -309,10 +321,10 @@
                         name="first_guarantor_date_of_phone_number"
                         type="text"
                         placeholder="0817623XX"
-                        value="{{ $first_guarantor->phone_number??old('first_guarantor_date_of_phone_number') }}"
+                        value="{{ $first_guarantor->phone_number??old('first_guarantor_date_of_phone_number') ?? ''}}"
                         maxlength="50"
                 >
-                <div class="invalid-feedback">{{ $errors->first('first_guarantor_date_of_phone_number') }}</div>
+                <div class="invalid-feedback">{{ $errors->first('first_guarantor_date_of_phone_number') ?? ''}}</div>
             </div>
             <div class="form-group col-sm-4">
                 <label>ឯកសារសម្គាល់ខ្លួន</label>
@@ -321,13 +333,13 @@
                     <option value="" selected disabled>[-- ជ្រើសរើស --]</option>
                     @foreach ($documents as $document)
                         @if($first_guarantor)
-                            <option value="{{ $document->id }}" {{ $first_guarantor -> document_type == $document->id ? 'selected' :  '' }}>{{ $document->name }}</option>
+                            <option value="{{ $document->id ?? ''}}" {{ $first_guarantor -> document_type == $document->id ? 'selected' :  '' }}>{{ $document->name ?? ''}}</option>
                         @else
-                            <option value="{{ $document->id }}" {{ old('first_guarantor_document_type') == $document->id ? 'selected' :  '' }}>{{ $document->name }}</option>
+                            <option value="{{ $document->id ?? ''}}" {{ old('first_guarantor_document_type') == $document->id ? 'selected' :  '' }}>{{ $document->name ?? ''}}</option>
                         @endif
                     @endforeach
                 </select>
-                <div class="invalid-feedback">{{ $errors->first('first_guarantor_document_type') }}</div>
+                <div class="invalid-feedback">{{ $errors->first('first_guarantor_document_type') ?? ''}}</div>
             </div>
             <div class="form-group col-sm-4">
                 <label for="document_number" id="document_number_title_2">លេខសំគាល់ឯកសារ </label>
@@ -337,10 +349,10 @@
                         id="input_document_number_2"
                         type="text"
                         placeholder="សូមជ្រើសរើសប្រភេទឯកសារសម្គាល់ខ្លួនមុនសិន"
-                        value="{{ $first_guarantor -> document_number ?? old('first_guarantor_document_number') }}"
+                        value="{{ $first_guarantor -> document_number ?? old('first_guarantor_document_number') ?? ''}}"
                         maxlength="50"
                 >
-                <div class="invalid-feedback">{{ $errors->first('first_guarantor_document_number') }}</div>
+                <div class="invalid-feedback">{{ $errors->first('first_guarantor_document_number') ?? ''}}</div>
             </div>
         </div>
     </div>
@@ -357,9 +369,9 @@
                         name="second_guarantor_name"
                         type="text"
                         placeholder="យិនប៊ុនណា"
-                        value="{{ $second_guarantor->full_name??old('second_guarantor_name') }}"
+                        value="{{ $second_guarantor->full_name??old('second_guarantor_name') ?? ''}}"
                         maxlength="50">
-                <div class="invalid-feedback">{{ $errors->first('second_guarantor_name') }}</div>
+                <div class="invalid-feedback">{{ $errors->first('second_guarantor_name') ?? ''}}</div>
             </div>
             <div class="form-group col-sm-4">
                 <label>ភេទ</label>
@@ -368,13 +380,13 @@
                     <option value="" selected>[-- ជ្រើសរើស --]</option>
                     @foreach ($sexes as $sex)
                         @if ($second_guarantor)
-                            <option value="{{ $sex->id }}" {{ $second_guarantor->sex == $sex->id ? 'selected' :  '' }} >{{ $sex->name }}</option>
+                            <option value="{{ $sex->id ?? ''}}" {{ $second_guarantor->sex == $sex->id ? 'selected' :  '' }} >{{ $sex->name ?? ''}}</option>
                         @else
-                            <option value="{{ $sex->id }}" {{  old('second_guarantor_sex') == $sex->id ? 'selected' :  '' }} >{{ $sex->name }}</option>
+                            <option value="{{ $sex->id ?? ''}}" {{  old('second_guarantor_sex') == $sex->id ? 'selected' :  '' }} >{{ $sex->name ?? ''}}</option>
                         @endif
                     @endforeach
                 </select>
-                <div class="invalid-feedback">{{ $errors->first('second_guarantor_sex') }}</div>
+                <div class="invalid-feedback">{{ $errors->first('second_guarantor_sex') ?? ''}}</div>
             </div>
 
             <div class="form-group col-sm-4">
@@ -388,9 +400,9 @@
                         data-val="true"
                         data-val-required="Required"
                         placeholder="ថ្ងៃ/ខែ/ឆ្នាំ"
-                        value="{{ $second_guarantor->date_of_birth??old('second_guarantor_date_of_birth') }}"
+                        value="{{ $second_guarantor->date_of_birth??old('second_guarantor_date_of_birth') ?? ''}}"
                 >
-                <div class="invalid-feedback">{{ $errors->first('second_guarantor_date_of_birth') }}</div>
+                <div class="invalid-feedback">{{ $errors->first('second_guarantor_date_of_birth') ?? ''}}</div>
             </div>
             <div class="form-group col-sm-4">
                 <label for="phone_number">លេខទំនាក់ទំនង</label>
@@ -399,10 +411,10 @@
                         name="second_guarantor_phone_number"
                         type="text"
                         placeholder="0817623XX"
-                        value="{{ $second_guarantor->phone_number??old('second_guarantor_phone_number') }}"
+                        value="{{ $second_guarantor->phone_number??old('second_guarantor_phone_number')?? '' }}"
                         maxlength="50"
                 >
-                <div class="invalid-feedback">{{ $errors->first('second_guarantor_phone_number') }}</div>
+                <div class="invalid-feedback">{{ $errors->first('second_guarantor_phone_number')?? '' }}</div>
             </div>
             <div class="form-group col-sm-4">
                 <label>ឯកសារសម្គាល់ខ្លួន</label>
@@ -417,7 +429,7 @@
                         @endif
                     @endforeach
                 </select>
-                <div class="invalid-feedback">{{ $errors->first('second_guarantor_document_type') }}</div>
+                <div class="invalid-feedback">{{ $errors->first('second_guarantor_document_type')?? '' }}</div>
             </div>
             <div class="form-group col-sm-4">
                 <label for="document_number" id="document_number_title_2">លេខសំគាល់ឯកសារ </label>
@@ -430,7 +442,7 @@
                         value="{{ $second_guarantor -> document_number ?? old('second_guarantor_document_number') }}"
                         maxlength="50"
                 >
-                <div class="invalid-feedback">{{ $errors->first('second_guarantor_document_number') }}</div>
+                <div class="invalid-feedback">{{ $errors->first('second_guarantor_document_number')?? '' }}</div>
             </div>
         </div>
     </div>

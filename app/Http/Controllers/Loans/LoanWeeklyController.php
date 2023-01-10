@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Loans;
 
 
+use App\Http\Traits\Weeklyloan;
+use Carbon\Carbon;
+use Carbon\Exceptions\InvalidFormatException;
 use Illuminate\Http\Request;
 use App\Enums\InterestEnum;
 use App\Http\Controllers\Controller;
@@ -18,6 +21,7 @@ use App\Models\LoanType;
 
 class LoanWeeklyController extends Controller
 {
+    use Weeklyloan;
     public function create(Request $reqeust)
     {
         // default
@@ -37,7 +41,7 @@ class LoanWeeklyController extends Controller
                 $query->where('code', InterestEnum::WEEKLY);
             })
             ->orderBy('created_at', 'desc')->first();
-        }        
+        }
         $loanTypes = LoanType::all();
         return view('loans.weekly.create', [
             'interest' => $this->getInterestType(InterestEnum::WEEKLY),
@@ -57,6 +61,7 @@ class LoanWeeklyController extends Controller
 
     public function store(LoanRequest $request)
     {
+
         DB::beginTransaction();
         try {
 
@@ -75,6 +80,7 @@ class LoanWeeklyController extends Controller
             return redirect()->back()->with('success', 'បញ្ចូលកម្ចីសប្តាហ៍ជោគជ័យ! លេខកូដអតិថិជន៖'." $client->code");
         } catch (\Exception $ex) {
             DB::rollback();
+            dd($ex -> getTrace());
             return redirect()->back()->with('error', 'មិនអាចបញ្ចូលកម្ចីសប្តាហ៍' . $ex->getMessage());
         }
     }
@@ -104,7 +110,7 @@ class LoanWeeklyController extends Controller
     {
         DB::beginTransaction();
         try {
-           
+
             $client = $this->clientService->createClient($request);
             // update rate for payment
             $this->paymentSevice->updateInterestRate(InterestEnum::WEEKLY, $request->rate, $request->commission_rate);

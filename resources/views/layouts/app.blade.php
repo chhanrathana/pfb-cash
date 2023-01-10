@@ -45,7 +45,7 @@
             </svg>
         </button>
         <a class="c-header-brand d-lg-none" href="#">
-            <img width="180" height="50" src="{{ asset('img/logo.jpg') }}" alt="Loan">
+            <img  height="50" src="{{ asset('img/brand-transparent.png') }}" alt="Loan">
         </a>
 
         <button class="c-header-toggler c-class-toggler mfs-3 d-md-down-none" type="button" data-target="#sidebar"

@@ -29,7 +29,7 @@ class LoanService
 
     public function createLoan($req, $client, $type)
     {
-        $interest = InterestRate::where('code', $type)->first();
+        $interest = InterestRate::where('code', $type )->first();
 
         $loan = Loan::find($req->loan_id);
         $registrationDate = Carbon::createFromFormat('d/m/Y', $req->registration_date)->format('Y-m-d');
@@ -43,7 +43,6 @@ class LoanService
         $loan->started_payment_date = $req -> started_payment_date;
         $loan->admin_rate = $req -> admin_rate;
         $loan->purpose = $req -> loan_purpose;
-
         $loan->interest_rate_id = $interest->id;
         $loan->rate = $interest->rate;
         $loan->commission_rate = $interest->commission_rate;

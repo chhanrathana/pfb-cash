@@ -3,7 +3,7 @@
 
 @section('content')
 
-    @include('includes.alert-info')
+{{--    @include('includes.alert-info')--}}
 
     @include('includes.search-client', ['url' => route('loan.weekly.create')])
 
@@ -50,7 +50,7 @@
                         <div class="invalid-feedback">{{ $errors->first('admin_rate') }}</div>
                     </div>
                     <div class="form-group col-sm-4">
-                        <label>ប្រាក់ការ​ (%) <span class="text-danger">*</span></label>
+                        <label>ប្រាក់ការ(%) <span class="text-danger">*</span></label>
                         <input
                             class="form-control number {{ $errors->first('rate') ? 'is-invalid':'' }}"
                             name="rate"
@@ -59,18 +59,6 @@
                             value="{{ $loan->rate??$interest->rate }}"
                             >
                         <div class="invalid-feedback">{{ $errors->first('rate') }}</div>
-                    </div>
-                   
-                    <div class="form-group col-sm-4">
-                        <label>សេវាប្រតិបត្តិការ(%) <span class="text-danger">*</span></label>
-                        <input
-                            class="form-control number {{ $errors->first('commission_rate') ? 'is-invalid':'' }}"
-                            name="commission_rate"
-                            type="text"
-                            placeholder="2.3"
-                            value="{{ $loan->commission_rate??$interest->commission_rate }}"
-                            >
-                        <div class="invalid-feedback">{{ $errors->first('commission_rate') }}</div>
                     </div>
 
                     <div class="form-group col-sm-4">
@@ -119,13 +107,21 @@
                         <label>សាខា <span class="text-danger">*</span></label>
                         <select class="form-control select2 {{ $errors->first('branch_id') ? 'is-invalid':'' }}" name="branch_id">
                             <option value="" selected>[-- ជ្រើសរើស --]</option>
-                            @foreach ($branches as $branch)                                
-                                <option value="{{ $branch->id }}" {{ old('branch_id') == $branch->id ? 'selected' :  '' }}>{{ $branch->name }}</option>                                
+                            @foreach ($branches as $branch)
+                                <option value="{{ $branch->id }}" {{ old('branch_id') == $branch->id ? 'selected' :  '' }}>{{ $branch->name }}</option>
                             @endforeach
                         </select>
                         <div class="invalid-feedback">{{ $errors->first('branch_id') }}</div>
-                    </div> 
-                    
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <label>គោលបំណងខ្ចី <span class="text-danger">*</span></label>
+                        <input
+                                class="form-control {{ $errors->first('loan_purpose') ? 'is-invalid':'' }}"
+                                name="loan_purpose"
+                                type="text"
+                                value="{{ $loan->purpose??old('loan_purpose') }}">
+                        <div class="invalid-feedback">{{ $errors->first('loan_purpose') }}</div>
+                    </div>
                 </div>
             </div>
             <div class="card-footer">

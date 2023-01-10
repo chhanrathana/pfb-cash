@@ -2,7 +2,7 @@
 @section('title', 'កែប្រែ-ប្រាក់កម្ចី')
 
 @section('content')
-    @include('includes.alert-info')
+{{--    @include('includes.alert-info')--}}
 
     <form action="{{ route('loan.weekly.update',['id' => $loan->id ]) }}" method="POST">
         @csrf
@@ -63,7 +63,7 @@
                             >
                         <div class="invalid-feedback">{{ $errors->first('rate') }}</div>
                     </div>
-                   
+
                     <div class="form-group col-sm-4">
                         <label>សេវាប្រតិបត្តិការ(%) <span class="text-danger">*</span></label>
                         <input

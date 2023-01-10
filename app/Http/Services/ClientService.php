@@ -16,14 +16,7 @@ class ClientService
 
     private function generateClientCode()
     {
-//        $count = DB::table('clients')
-//        ->where('branch_id', auth()->user()->branch_id)
-//        ->count();
-//        $count = auth()->user()->branch_id ? DB::table('clients')
-//        ->where('branch_id', auth()->user()->branch_id)
-//        ->count(): Client::count();
         $count= DB::table('clients')->max('code');
-//        $code = (168 + $count + 1);
         $code = $count +1;
         return str_pad($code, 5, '0', STR_PAD_LEFT);
     }

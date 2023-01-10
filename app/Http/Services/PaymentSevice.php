@@ -8,6 +8,7 @@ use App\Models\InterestRate;
 use App\Enums\PaymentStatusEnum;
 use App\Enums\InterestEnum;
 use App\Models\Calendar;
+use Carbon\Exceptions\InvalidFormatException;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Facades\DB;
 
@@ -98,7 +99,6 @@ class PaymentSevice {
             }
 
         }
-        exit;
         return $payment;
     }
 
@@ -151,6 +151,12 @@ class PaymentSevice {
                 $commisonAmount = ($loan->principal_amount * ($interest->commission_rate / 100));
 
 
+            }
+            //
+            try {
+                $paymentDate = Carbon::parse($paymentDate);
+            }catch (InvalidFormatException $ex){
+                $paymentDate = Carbon::createFromFormat('d/m/Y',$paymentDate)->format('Y-m-d');
             }
             // echo '<br/>$paymentDate || '.$i.' >> calculateDate '.$calculateDate.' >> paymentDate '.$paymentDate.' >> date '.$date.' $diff '.$diff;
             $payment = new Payment();
@@ -292,9 +298,13 @@ class PaymentSevice {
 
     private function countDay($startPaymentDate, $paymentDate)
     {
-
-        $paymentDate = Carbon::parse(Carbon::parse($paymentDate)->format('Y-m-d'));
-
+        // Carbon::parse('19/01/2023')
+        try {
+            $paymentDate = Carbon::parse($paymentDate)->format('d/m/Y');
+        }catch (InvalidFormatException $ex){
+            $paymentDate = Carbon::createFromFormat('d/m/Y',$paymentDate)->format('Y-m-d');
+        }
+//        $paymentDate = Carbon::parse(Carbon::parse($paymentDate)->format('Y-m-d'));
         $now = Carbon::parse(Carbon::createFromFormat('d/m/Y', $startPaymentDate)->format('Y-m-d')) ;
 
         return $now->diff($paymentDate)->days;
