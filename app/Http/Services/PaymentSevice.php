@@ -233,7 +233,6 @@ class PaymentSevice {
 
                 $commisonAmount = ($loan->principal_amount * ($interest->commission_rate / 100));
             }
-
             $payment = new Payment();
             $payment->status = PaymentStatusEnum::PENDING;
             $payment->loan_id = $loan->id;
@@ -300,7 +299,7 @@ class PaymentSevice {
     {
         // Carbon::parse('19/01/2023')
         try {
-            $paymentDate = Carbon::parse($paymentDate)->format('d/m/Y');
+            $paymentDate = Carbon::parse($paymentDate)->format('Y-m-d');
         }catch (InvalidFormatException $ex){
             $paymentDate = Carbon::createFromFormat('d/m/Y',$paymentDate)->format('Y-m-d');
         }

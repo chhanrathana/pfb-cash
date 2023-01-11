@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d35e04f-08c6-478a-a4a2-8857e55fc922" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Traits/WeeklyLoan.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/brand-transparent.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Loans/LoanWeeklyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Loans/LoanWeeklyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/LoanRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/LoanRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Services/ClientService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Services/ClientService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Services/LoanService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Services/LoanService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Loans/LoanDailyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Loans/LoanDailyController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Services/PaymentSevice.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Services/PaymentSevice.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/includes/create-client.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/includes/create-client.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/loans/weekly/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/loans/weekly/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/loans/weekly/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/loans/weekly/edit.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +198,8 @@
       <updated>1673184951103</updated>
       <workItem from="1673184956982" duration="2738000" />
       <workItem from="1673281888384" duration="6211000" />
-      <workItem from="1673354063624" duration="15533000" />
+      <workItem from="1673354063624" duration="15617000" />
+      <workItem from="1673405060932" duration="399000" />
     </task>
     <servers />
   </component>
