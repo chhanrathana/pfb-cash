@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Loans;
 
 
-use App\Http\Traits\Weeklyloan;
+use App\Http\Traits\WeeklyLoan;
 use Carbon\Carbon;
 use Carbon\Exceptions\InvalidFormatException;
 use Illuminate\Http\Request;
@@ -21,7 +21,7 @@ use App\Models\LoanType;
 
 class LoanWeeklyController extends Controller
 {
-    use Weeklyloan;
+    use WeeklyLoan;
     public function create(Request $reqeust)
     {
         // default
