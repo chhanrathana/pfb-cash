@@ -15,7 +15,7 @@ class CreateDocumentTypeTable extends Migration
     {
         Schema::create('document_type', function (Blueprint $table) {
             $table->string('id')->primary();
-            $table->string('name')->nullable();
+            $table->string('name',50)->nullable();
         });
     }
 
