@@ -14,5 +14,5 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: ${{ secrets.SSH_PORT }}
-        script: 'cd uat.pfbcash.khmer-app.com && git init && git reset --hard && git pull origin main && composer update && cp .env.uat .env && php artisan migrate:fresh --seed'
+        script: 'cd uat.pfbcash.khmer-app.com && git init && git reset --hard && git pull origin main && composer update && cp .env.uat .env && php artisan migrate'
           
