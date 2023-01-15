@@ -376,7 +376,7 @@
             <div class="form-group col-sm-4">
                 <label>ភេទ</label>
                 <select class="form-control select2  {{ $errors->first('second_guarantor_sex') ? 'is-invalid':'' }}"
-                        name="second_guarantor_sex" id="sex">
+                        name="second_guarantor_sex" id="second_guarantor_sex">
                     <option value="" selected>[-- ជ្រើសរើស --]</option>
                     @foreach ($sexes as $sex)
                         @if ($second_guarantor)
@@ -419,7 +419,7 @@
             <div class="form-group col-sm-4">
                 <label>ឯកសារសម្គាល់ខ្លួន</label>
                 <select class="form-control select2 {{ $errors->first('second_guarantor_document_type') ? 'is-invalid':'' }}"
-                        name="second_guarantor_document_type" id="document_type_2">
+                        name="second_guarantor_document_type" id="second_guarantor_document_type">
                     <option value="" selected disabled>[-- ជ្រើសរើស --]</option>
                     @foreach ($documents as $document)
                         @if($second_guarantor)
